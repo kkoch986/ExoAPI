@@ -8,4 +8,22 @@
 
 body{
 	font-family:Helvetica, sans-serif;
+	background:url('/images/bg-text.png') top center no-repeat $bgColor;
+}
+
+a.logo {
+	width:192px;
+	height:116px;
+	background:url('/images/logo.jpg') top left;
+	display:block;
+	position:fixed;
+	top:0px;
+	left:50%;
+	margin-left:-300px;
+}
+
+#main-content {
+	width:651px;
+	margin: 0 auto;
+	padding-left:325px;
 }
