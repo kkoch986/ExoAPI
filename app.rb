@@ -27,6 +27,9 @@ get '/api/planets/:id' do
 	JSON.pretty_generate(planets.to_a)
 end
 
-get '/api/stars/:id' do
-	
+get '/api/planets/search' do
+
+	params[:properties.mass].to_a
+
+
 end
