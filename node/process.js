@@ -33,6 +33,7 @@ function startParsing(err, collection)
 		
 		var id = xml.get("//id").text();
 		var object = parseElement(xml.root());
+		delete object.id;
 		object._id = id;
 
 		collection.save(object);
