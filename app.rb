@@ -34,9 +34,9 @@ get '/api/planets/search' do
 				field = parts[0]
 				operator = parts[1]
 
-				if(Float(params[p]))
-					search_p[field] = {"$" + operator => Float(params[p])}
-				else
+				begin
+					search_p[field] = {"$" + operator => Float(params[p])} 
+				rescue 
 					search_p[field] = {"$" + operator => params[p]}
 				end
 			end
