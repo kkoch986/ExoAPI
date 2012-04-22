@@ -13,6 +13,8 @@ db = Connection.new("localhost").db('test')
 
 get '/api/planets/search' do
 
+	response['Access-Control-Allow-Origin'] = '*'
+
 	collection = db.collection('planets')
 
 	opts = get_find_opts(params)
@@ -52,6 +54,8 @@ end
 
 
 get '/api/planets/:id' do
+
+	response['Access-Control-Allow-Origin'] = '*'
 
 	collection = db.collection('planets')
 
