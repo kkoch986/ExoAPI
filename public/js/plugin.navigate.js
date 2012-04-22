@@ -28,7 +28,8 @@
 */	
 
 	function setPageName(target) {
-		$('#page-holder').html(pageNames[target]);
+		$('#page-holder div').html(pageNames[target]);
+		$('#page-holder div').delay(100).animate({top: '0px'}, 400, 'easeOutQuad');
 	}
 
 	function setArrows(target) {
@@ -62,17 +63,17 @@
 			$('.arrows').fadeTo(100, 0);
 			isAnimating === true;
 			animDistance = pageWidth * target;
-			$('#page-holder div').animate({top: '-100px'}, 1000, function() {});
+			$('#page-holder div').animate({top: '-100px'}, 400, 'easeOutQuad');
 
 			resizeWrapper(target);
 			$('body').animate({scrollTop : 0},'slow');
 			$('ul.slides').animate({left: - animDistance},function() {
 				setPageName(target);
-				$('.arrows').fadeTo(200, 1);
+				$('.arrows').fadeTo(300, 1);
 				setArrows(target)
 				pageIdx = target;
 				isAnimating = false;
-				$('#page-holder div').animate({top: '0px'}, 1000, function() {});
+
 			});
 		}
 

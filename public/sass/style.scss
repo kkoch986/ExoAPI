@@ -74,10 +74,12 @@ a.arrow-lt:hover {
 	font-size:28px;
 	text-decoration:none;
 	font-weight:bold;
+	overflow:hidden;
 
 	div {
 		position:relative;
 		top:0px;
+		padding-right:5px;
 	}
 
 
@@ -108,7 +110,7 @@ a.arrow-lt:hover {
 			margin-bottom:50px;
 
 			h2 {
-				font-size:76px;
+				font-size:60px;
 				color:#FFF;
 				font-weight:bold;
 				margin-bottom:20px;
@@ -118,6 +120,7 @@ a.arrow-lt:hover {
 				font-size:13px;
 				line-height:19px;
 				color:#FFF;
+				font-style:italic;
 			}
 
 		}
@@ -310,7 +313,7 @@ a.arrow-lt:hover {
 					}
 				}
 
-				#docs {
+				#docs, #about-slide {
 					width:460px;
 
 					h2 {
