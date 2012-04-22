@@ -10,14 +10,28 @@ var Exo = (function (obj) {
 		//private function
 	}
 
-	_this.initLinks = function(){
-		formatLinks();
+	function initRollovers() {
+		$('li.roll-trigger').mouseenter(function() {
+			$(this).find('div.back-anim').show();
+			$(this).find('div.back-anim').stop(true, true).animate({height:'45px'}, 100);
+			$(this).find('h3').css({color: '#FFF'});
+		});
+
+		$('li.roll-trigger').mouseleave(function() {
+			$(this).find('div.back-anim').stop(true, true).animate({height:'0px'}, 100, 
+				function() {
+					$(this).hide();
+
+			});
+		});
 	}
 
-	function formatLinks(){
-		// add spans inside of links
-
+	_this.initGlobalApp = function() {
+		initRollovers();
 	}
+
+
 	
-	return my;
+	return obj;
+
 }(Exo || {}));

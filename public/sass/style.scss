@@ -9,6 +9,7 @@
 body{
 	font-family:Helvetica, sans-serif;
 	background:url('/images/bg-text.png') top center no-repeat $bgColor;
+	background-attachment:fixed;
 }
 
 a.logo {
@@ -17,13 +18,104 @@ a.logo {
 	background:url('/images/logo.jpg') top left;
 	display:block;
 	position:fixed;
-	top:0px;
+	top:36px;
 	left:50%;
-	margin-left:-300px;
+	margin-left:-464px;
 }
 
 #main-content {
 	width:651px;
 	margin: 0 auto;
 	padding-left:325px;
+
+	#sub-nav {
+		width:651px;
+		height:28px;
+		border-top: 1px solid $charcoal;
+		margin-top:130px;
+
+		ul.subnav {
+			float:right;
+			height:20px;
+			float:right;
+			padding-top:8px;
+
+			li {
+				height:20px;
+				float:right;
+				margin-left:12px;
+
+				a.sub-link:link, a.sub-link:active, a.sub-link:visited {
+					font-family:arial, helvetica, san-serif;
+					font-size:14px;
+					color:$charcoal;
+					text-decoration:none;
+					font-weight:bold;
+
+					&:hover {
+						color:$blue;
+					}
+				}  
+			}
+		}
+	}
+
+	ul.planets {
+		width:360px;
+		margin-top:60px;
+
+		li.roll-trigger {
+			width:360px;
+			height: 45px;
+			position:relative;
+			float:left;
+			margin-bottom:25px;
+
+			div.back-anim {
+				width:360px;
+				display:none;
+				height:0px;
+				position:relative;
+				background-color:$blue;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+
+			div.info {
+				width:360px;
+				height:45px;
+				position:absolute;
+				top:0px;
+				left:0px;
+
+				a.filler {
+					height:45px;
+					width:360px;
+					text-decoration:none;
+				}
+
+				h2 {
+					font-family:arial, helvetica, san-serif;
+					font-size: 30px;
+					font-weight:bold;
+					color: #FFF;
+				}
+
+				h3 {
+					font-family:arial, helvetica, san-serif;
+					font-size: 11px;
+					font-weight:bold;
+					color: $ltgrey;
+				}
+
+			}
+
+
+		}
+	}
 }
+
+
+
+
