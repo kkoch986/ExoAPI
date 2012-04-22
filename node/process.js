@@ -2,7 +2,7 @@ var terminal = require('child_process').spawn('cmd');
 var fs = require('fs');
 var libxmljs = require("libxmljs");
 
-terminal.stdout.on('git pull ../', function (data) {
+terminal.stdout.on('cd ../exo_data && git pull', function (data) {
     console.log('stdout: ' + data);
 });
 
