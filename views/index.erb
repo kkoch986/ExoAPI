@@ -16,6 +16,7 @@
 	<div id="sub-nav">
 		<ul class="subnav">
 			<li class="interact-link"><a href="#" class="sub-link" onclick="return false;"><span data-title="INTERACT">INTERACT</span></a></li>
+			<li class="about-link"><a href="#" class="sub-link" onclick="return false;"><span data-title="ABOUT">ABOUT</span></a></li>		
 			<li class="docs-link"><a href="#" class="sub-link" onclick="return false;"><span data-title="DOCS">DOCS</span></a></li>
 			<li class="demo-link"><a href="#" class="sub-link" onclick="return false;"><span data-title="DEMO">DEMO</span></a></li>		
 		</ul>
@@ -24,6 +25,10 @@
 	<div id="overflow">
 		<ul class="slides">
 			<li class="slide demo">
+				<div id="welcome">
+					<h2>Welcome</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum tempus purus sed aliquet. Nulla facilisi. Morbi vitae nulla vel tellus dignissim fringilla. Morbi vel lorem vitae sapien hendrerit tempus. Curabitur feugiat hendrerit diam, vel eleifend turpis pretium id.</p>
+				</div>
 				<div class="slide-hide">
 					<ul class="planets">
 					</ul>
@@ -105,15 +110,46 @@
 						imagedescription<br />
 					</p>
 
+					<h2>Paging:</h2>
 
+<p>You may not always want all planets to be returned in your query. To limit the number of results returned by your queries, use limit=[start,count]. For example to return the first 10 planets ordered by name use:<br /><span class="code">/planets/all?sort=[name], limit=10</span></p>
 
-	
+	<p>You can also apply an offset to begin from other points in the data, for example to access the 10 - 20 range, use the following query:<br /><span class="code">/planets/all?sort=[name], limit=10, start=10</span></p>
 
-	
+	<h2>Example Queries:</h2>
+
+<p>To find the names of all planets with a mass less than 5, discovered this year (2012), sorted by mass ascending:<br /><span class="code">/planets/search?properties.mass:lt=5&discoveryyear=2012&sort=[properties.mass]&fields=[name]</code>
+</p>
+
+<h2>Response Format:</h2>
+
+<p>The API responses are JSON objects with the following format:</p>
+
+<pre>{ 
+"response": 
+{
+"results": [ {field:value, field2:value2 … } ], 
+"count": 100 
+}
+ }</pre>
+
 					</div>
 				</div>
 				<div class="clear"></div>
 			</li>
+
+			<!-- about slide -->
+			<li class="slide">
+				<div class="slide-hide">
+					<h1>about</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum tempus purus sed aliquet. Nulla facilisi. Morbi vitae nulla vel tellus dignissim fringilla. Morbi vel lorem vitae sapien hendrerit tempus. Curabitur feugiat hendrerit diam, vel eleifend turpis pretium id.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum tempus purus sed aliquet. Nulla facilisi. Morbi vitae nulla vel tellus dignissim fringilla. Morbi vel lorem vitae sapien hendrerit tempus. Curabitur feugiat hendrerit diam, vel eleifend turpis pretium id.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum tempus purus sed aliquet. Nulla facilisi. Morbi vitae nulla vel tellus dignissim fringilla. Morbi vel lorem vitae sapien hendrerit tempus. Curabitur feugiat hendrerit diam, vel eleifend turpis pretium id.</p>
+				</div>
+			</li>
+			<!-- end about slide -->
+
+
 			<li class="slide">
 				<div class="slide-hide">
 					<div class="api-form">
@@ -228,7 +264,7 @@
 <a class="logo"></a>
 <a href="#" class="arrow-rt arrows"></a>
 <a href="#" class="arrow-lt arrows"></a>
-<div id="page-holder"><a href="#" class="page-title">Demo ///</a></div>
+<div id="page-holder">Demo ///</div>
 <!--<div id="descrip"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum tempus purus sed aliquet. Nulla facilisi. Morbi vitae nulla vel tellus dignissim fringilla. Morbi vel lorem vitae sapien hendrerit tempus. Curabitur feugiat hendrerit diam, vel eleifend turpis pretium id.</p></div>-->
 
 <script src="/js/jquery-1.7.2.min.js"></script>

@@ -36,6 +36,7 @@
 				$('li.planet').eq(clickedIdx).find('a.expand-image').fadeTo(300, 1);
 				$('li.planet').eq(clickedIdx).find('a.close-button').fadeTo(300, 1);
 				$(this).find('.back-anim').animate({top: '-48px'}, function() {
+					$.fn.navigate.resizeHandle(0);
 					
 				});
 				panelOpen[clickedIdx] = true;
@@ -52,6 +53,7 @@
 				});
 				myScope.find('a.close-button').fadeTo(300, 0, function() {
 						$('li.planet').eq(clickedIdx).find('a.expand-image').hide();
+						$.fn.navigate.resizeHandle(0);
 						$(this).hide();
 				});
 				panelOpen[clickedIdx] = false;

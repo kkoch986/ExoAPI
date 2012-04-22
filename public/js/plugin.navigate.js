@@ -17,10 +17,32 @@
 
 	var isAnimating = false;
 
+	var pageNames = new Array();
+	pageNames[0] = "Demo ///";
+	pageNames[1] = "Docs ///";
+	pageNames[2] = "Interact ///";
+
 
 /**************************************************************************
 *  DEFINE MAIN FUNCTIONS
 */	
+
+	function setPageName(target) {
+		$('#page-holder').html(pageNames[target]);
+	}
+
+	function setArrows(target) {
+		if(target <= 0) {
+			$('a.arrow-lt').hide();
+			$('a.arrow-rt').show();
+		} else if (target >= (numPages -1)) {
+			$('a.arrow-lt').show();
+			$('a.arrow-rt').hide();
+		} else {
+			$('a.arrow-lt').show();
+			$('a.arrow-rt').show();
+		}
+	}
 
 	function resizeWrapper(target) {
 		var setHeight = parseInt($('li.slide').eq(target).height());
@@ -44,7 +66,9 @@
 			resizeWrapper(target);
 			$('body').animate({scrollTop : 0},'slow');
 			$('ul.slides').animate({left: - animDistance},function() {
+				setPageName(target);
 				$('.arrows').fadeTo(200, 1);
+				setArrows(target)
 				pageIdx = target;
 				isAnimating = false;
 			});
