@@ -108,6 +108,11 @@
 
 	$('li.interact-link').click(function(e) {
 		e.preventDefault();
+		slideToSlide(3);
+	});
+
+	$('li.about-link').click(function(e) {
+		e.preventDefault();
 		slideToSlide(2);
 	});
 
