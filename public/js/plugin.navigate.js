@@ -20,7 +20,8 @@
 	var pageNames = new Array();
 	pageNames[0] = "Demo ///";
 	pageNames[1] = "Docs ///";
-	pageNames[2] = "Interact ///";
+	pageNames[3] = "About ///";
+	pageNames[3] = "Interact ///";
 
 
 /**************************************************************************
@@ -29,7 +30,7 @@
 
 	function setPageName(target) {
 		$('#page-holder div').html(pageNames[target]);
-		$('#page-holder div').delay(100).animate({top: '0px'}, 400, 'easeOutQuad');
+		$('#page-holder div').delay(0).animate({top: '0px'}, 250, 'easeOutQuad');
 	}
 
 	function setArrows(target) {
@@ -62,7 +63,7 @@
 		if(isAnimating === false) {
 			toggleNavClasses(target)
 			$('.arrows').fadeTo(100, 0);
-			isAnimating === true;
+			isAnimating = true;
 			animDistance = pageWidth * target;
 			$('#page-holder div').animate({top: '-100px'}, 400, 'easeOutQuad');
 
@@ -116,10 +117,15 @@
 
 	$('li.docs-link').click(function(e) {
 		e.preventDefault();
-		slideToSlide(1);
+		slideToSlide(3);
 	});
 
 	$('li.interact-link').click(function(e) {
+		e.preventDefault();
+		slideToSlide(3);
+	});
+
+	$('a.docs-page').click(function(e) {
 		e.preventDefault();
 		slideToSlide(3);
 	});

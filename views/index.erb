@@ -27,7 +27,7 @@
 			<li class="slide demo">
 				<div id="welcome">
 					<h2>The <span class='ltgrey'>Universe</span><br />@REST</h2>
-					<p>The Exo API is a powerful tool that provides access to exoplanet data through a simple RESTful API. Below is an interactive exploration of thirty planets pulled entirely using the API. If you are interested in developing using Exo API visit our docs page.</p>
+					<p>The Exo API is a powerful tool that provides access to exoplanet data through a simple RESTful API. Below is an interactive exploration of thirty planets pulled entirely using the API. If you are interested in developing using Exo API visit our <a href="#" class="docs-page">docs page</a>.</p>
 				</div>
 				<div class="slide-hide">
 					<ul class="planets">
@@ -143,7 +143,7 @@
 				<div class="slide-hide">
 					<div id="about-slide">
 						<h2>About</h2>
-						<p>ExoAPI is an ongoing project that extends the accessibility of exoplanetary data by providing an easy to use RESTful API. ExoAPI was created during the NASA Space Apps Challenge [spaceappschallenge.org] by a team of three amazing geniuses who knew nothing about space before they started this...and still don't really. </p>
+						<p>ExoAPI is an ongoing project that extends the accessibility of exoplanetary data by providing an easy to use RESTful API. ExoAPI was created during the NASA Space Apps Challenge [<a href="http://www.spaceappschallenge.org" target="_blank">spaceappschallenge.org</a>] by a team of three amazing geniuses who knew nothing about space before they started this...and still don't really. </p>
 
 <p>Currently the data is provided by <a href="http://exoplanetology.blogspot.com/" target="_blank">http://exoplanetology.blogspot.com/</a> who in turn feeds the data from <a href="http://exoplanet.eu/" target="_blank">http://exoplanet.eu/</a>. The ExoAPI team plans on extending the API to encompass a wider array of data sources and more interesting space data to reach as many programmers as possible and encourage an explosion of space data based mashups.</p>
 						<p><img src="images/ken.gif" />Ken "likes turtles"</p>
@@ -289,7 +289,7 @@ $(document).ready(function() {
 	// send a post request to the API to get the list of planets
   	$.ajax( 
   	{
-  		url: "http://174.122.110.37:12001/api/planets/all?limit=30&sort=[discoveryyear:desc]",
+  		url: "http://174.122.110.37:12001/api/planets/search?limit=30&sort=[discoveryyear:desc]&image:gt=",
   		success: function(data)
   		{
   			
@@ -321,7 +321,7 @@ $(document).ready(function() {
 						text += 
 								'<div class="image-holder" style="width:360px; height:100px; overflow:hidden;">' + 
 									'<img src="'+image_base_dir+d[x].image+image_type+'" style="width:360px;" />' + 
-									'<a href="'+image_base_dir+d[x].image+image_type+'" class="expand-image" rel="prettyPhoto"></a>' +  
+									'<a href="'+image_base_dir+d[x].image +'.png'+'" class="expand-image" rel="prettyPhoto"></a>' +  
 								'</div>';
 					}
 

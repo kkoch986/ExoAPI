@@ -148,7 +148,7 @@ var Exo = (function (obj) {
 			var base_url = "http://172.16.3.30:4567/api/planets";
 			var url = base_url + $("#url_spot").val();
 
-			var response = "Requesting: " + url + "\n" + "------------------------------------------------------------------------------------------------\n"
+			var response = "Requesting: " + url + "\n" + "----------------------------------------------------------------------------\n"
 			$("#api-response textarea").val(response);
 
 			$.get(url, {}, function(data){$("#api-response textarea").val(response + data);});
