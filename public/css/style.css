@@ -229,11 +229,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   *zoom: 1;
   margin-left: -3px;
 }
-<<<<<<< HEAD
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-=======
-/* line 49, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_inline-block-list.scss */
->>>>>>> d40460e36bc6d7cab63ec678942dfc3c269e4b68
+
 #api-tags li {
   list-style-image: none;
   list-style-type: none;
@@ -245,7 +241,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   *vertical-align: auto;
   white-space: nowrap;
 }
-<<<<<<< HEAD
+
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li:first-child, #api-tags li.first {
   padding-left: 0;
@@ -257,7 +253,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 50, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li.last {
   padding-right: 0;
-=======
 /* line 7, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #api-tags li {
   *display: inline;
@@ -281,7 +276,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .api-form form fieldset {
   padding: 1.4em;
   margin: 0 0 1.5em 0;
->>>>>>> d40460e36bc6d7cab63ec678942dfc3c269e4b68
 }
 /* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .api-form form legend {
