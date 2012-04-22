@@ -110,3 +110,7 @@ end
 get '/' do 
 	erb :index
 end
+
+get '/api_demo' do 
+	erb :api_demo
+end

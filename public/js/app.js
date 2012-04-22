@@ -9,6 +9,15 @@ var Exo = (function (obj) {
 	function private() {
 		//private function
 	}
+
+	_this.initLinks = function(){
+		formatLinks();
+	}
+
+	function formatLinks(){
+		// add spans inside of links
+
+	}
 	
 	return my;
 }(Exo || {}));
