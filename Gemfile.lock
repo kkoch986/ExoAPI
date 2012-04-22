@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     bson (1.6.2)
     json_pure (1.6.6)
