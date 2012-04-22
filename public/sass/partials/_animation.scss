@@ -10,6 +10,7 @@ $perspective: 400px;
 	perspective:$perspective;}
 
 .roll span{
+	height:45px;
 	display:block;
 	position:relative;
 	padding:0 2px;
@@ -29,7 +30,7 @@ $perspective: 400px;
 	transform-style:preserve-3d;
 }
 
-.rollHover span{
+.roll:hover span{
 	background:#ccc;-webkit-transform:translate3d(0px,0px,-30px) rotateX(90deg);
 	-moz-transform:translate3d(0px,0px,-30px) rotateX(90deg);
 	-o-transform:translate3d(0px,0px,-30px) rotateX(90deg);
@@ -37,6 +38,7 @@ $perspective: 400px;
 }
 
 .roll span:after{
+	height:45px;
 	content:attr(data-title);
 	display:block;position:absolute;
 	left:0;

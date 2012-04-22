@@ -12,16 +12,13 @@ var Exo = (function (obj) {
 
 	function initRollovers() {
 
-		$('a.filler').each(function(){
-			var $this = $(this);
-			var dataTitle = $this.innerHTML();
-			console.log(dataTitle);
-			var embed = '<span data-title="' + dataTitle + '">' + dataTitle + '</span>';
-			$this.innerHTML(embed);
-
-		});
-
-
+		// $('a.filler').each(function(){
+		// 	//var this = $(this);
+		// 	var dataTitle = $(this).html();
+		// 	console.log(dataTitle);
+		// 	var embed = '<span data-title="' + dataTitle + '">' + dataTitle + '</span>';
+		// 	$(this).html(embed);
+		// });
 
 
 		$('li.roll-trigger').mouseenter(function() {
