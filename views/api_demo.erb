@@ -1,52 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>
-The HTML5 Herald
-		</title>
-		<meta name="description" content="The HTML5 Herald">
-		<meta name="author" content="SitePoint">
-		<link rel="stylesheet" href="/css/style.css" type=
-		"text/css">
-	</head>
-	<body>
-		<!--BEGIN MAIN BLOCK CONTENT -->
-		<div id="main-content"></div><a class="logo"></a>
-		<script src="/js/app.js" type="text/javascript">
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <title>The HTML5 Herald</title>  
+  <meta name="description" content="The HTML5 Herald">  
+  <meta name="author" content="SitePoint">  
+  <link rel="stylesheet" href="/css/style.css">  
+
+</head>  
+<body> 
+
+<!--BEGIN MAIN BLOCK CONTENT -->
+<div id="main-content">
+	<!--BEGIN SUB NAV LINKS-->
+	<div id="sub-nav">
+		<ul class="subnav">
+			<li><a href="#" class="sub-link"><span data-title="INTERACT">INTERACT</span></a></li>
+			<li><a href="#" class="sub-link"><span data-title="DOCS">DOCS</span></a></li>
+			<li><a href="#" class="sub-link"><span data-title="DEMO">DEMO</span></a></li>		
+		</ul>
+	</div>
+	<!--END SUB NAV LINKS-->
+
+	<div class="api-form">
+		
+		<form>
+			<span>http://www.exoapi.org/api?</span>
+			<input type="text" placeholder="sdfksjdh"></input>
+		
+			<p>Filter:</p>
+			<ul id="api-tags">
+				<li class="selected"><span>name</span></li>
+				<li class="selected"><span>id</span></li>
+				<li class="selected"><span>discoverymethod</span></li>
+				<li class="selected"><span>properties:mass</span></li>
+				<li class="selected"><span>properties:radius</span></li>
+				<li class="selected"><span>properties:orbit:period</span></li>
+				<li class="selected"><span>properties:orbit:semimajoraxis</span></li>
+				<li class="selected"><span>properties:orbit:eccentricity</span></li>
+				<li class="selected"><span>properties:orbit:inclination</span></li>
+				<li class="selected"><span>star:spectraltype</span></li>
+				<li class="selected"><span>star:mass</span></li>
+				<li class="selected"><span>star:radius</span></li>
+				<li class="selected"><span>star:metallicity</span></li>
+				<li class="selected"><span>star:rightascension</span></li>
+				<li class="selected"><span>star:declination</span></li>
+				<li class="selected"><span>star:angulardistance</span></li>
+				<li class="selected"><span>star:distance</span></li>
+				<li class="selected"><span>star:magV</span></li>
+				<li class="selected"><span>star:magI</span></li>
+				<li class="selected"><span>star:magH</span></li>
+				<li class="selected"><span>star:magJ</span></li>
+				<li class="selected"><span>star:magK</span></li>
+				<li class="selected"><span>multiplicity</span></li>
+				<li class="selected"><span>discoveryyear</span></li>
+				<li class="selected"><span>lastupdate</span></li>
+				<li class="selected"><span>description</span></li>
+				<li class="selected"><span>new</span></li>
+				<li class="selected"><span>image</span></li>
+				<li class="selected"><span>imagedescription</span></li>
+			</ul>
+			<!-- END API TAGS -->
+
+			<p>Sort:</p>
+			<ul id="sort-opts">
+				<li class="sort-on">
+					<select class='sort-select'></select>
+
+					<input type="radio" name="sort1" value="asc"> Ascending</input>
+					<input type="radio" name="sort1" value="dec"> Decending</input>
+
+					<input type="button" value="add" class="add-button"></input>
+				</li>
+			</ul>
+
+			<p>Search:</p>
+			<ul id="search-opts">
+				<li class="search-on">
+					<input type="text" placeholder="search term"></input>
+
+					<input type="radio" name="search1" value="lt"> &lt;</input>
+					<input type="radio" name="search1" value="gt"> &gt;</input>
+					<input type="radio" name="search1" value="eq"> ==</input>
+
+					<input type="button" value="add" class="add-button"></input>
+				</li>
+			</ul>
+
+			
+			<div class="limit-opts">
+				<p>Limit:</p>
+				<span class="subtract">-</span>
+				<input type="text" class="to-increment" value="0"></input>
+				<span class="add">+</span>
+			</div>
+
+			<div class="start-opts">
+				<p>Start:</p>
+				<span class="subtract">-</span>
+				<input type="text" class="to-increment" value="0"></input>
+				<span class="add">+</span>
+			</div>
+
+			<div id="api-response">
+				<p>Response:</p>
+				<textarea></textarea>
+			</div>
+		</form>
+	</div>
+
+</div>	
+<a class="logo"></a>
+
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/app.js"></script>
+<script>
+$(document).ready(function() {
+	Exo.initGlobalApp();
+});
+
 </script>
-	<ul id="api-tags">
-		<li class="selected">name</li>
-		<li class="selected">id</li>
-		<li class="selected">discoverymethod</li>
-		<li class="deselected">properties:all</li>
-		<li class="selected">properties:mass</li>
-		<li class="selected">properties:radius</li>
-		<li class="selected">properties:orbit:period</li>
-		<li class="selected">properties:orbit:semimajoraxis</li>
-		<li class="deselected">properties:orbit:eccentricity</li>
-		<li class="selected">properties:orbit:inclination</li>
-		<li class="selected">star:all</li>
-		<li class="selected">star:spectraltype</li>
-		<li class="selected">star:mass</li>
-		<li class="selected">star:radius</li>
-		<li class="selected">star:metallicity</li>
-		<li class="selected">star:rightascension</li>
-		<li class="selected">star:declination</li>
-		<li class="selected">star:angulardistance</li>
-		<li class="selected">star:distance</li>
-		<li class="selected">star:magV</li>
-		<li class="selected">star:magI</li>
-		<li class="selected">star:magH</li>
-		<li class="selected">star:magJ</li>
-		<li class="selected">star:magK</li>
-		<li class="selected">multiplicity</li>
-		<li class="selected">discoveryyear</li>
-		<li class="selected">lastupdate</li>
-		<li class="selected">description</li>
-		<li class="selected">new</li>
-		<li class="selected">image</li>
-		<li class="selected">imagedescription</li>
-	</ul>
-	</body>
-</html>
+</body>  
+</html>  
+
+
+
+
+

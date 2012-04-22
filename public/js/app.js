@@ -36,8 +36,90 @@ var Exo = (function (obj) {
 		});
 	}
 
+	function initTags(){
+		$('#api-tags li').each(function(){
+			var $this = $(this);
+			var term = $this.find('span').html();
+			var opt = "<option value=" + term + ">"+term+"</option>";
+			$(".sort-select").append(opt);
+		})
+
+		$('#api-tags li').click(function() {
+			var $this = $(this);
+			var term = $this.find('span').html();
+			
+			if($this.hasClass('selected')){
+				$this.removeClass('selected');
+				$this.addClass('deselected');
+
+				// remove option from $('.sort-select');
+				var str = ".sort-select option[value=" + term + "]"
+				$(str).remove();
+			}else{
+				$this.removeClass('deselected');
+				$this.addClass('selected');
+
+				// add option from $('.sort-select');
+				var opt = "<option value=" + term + ">"+term+"</option>";
+				$(".sort-select").append(opt);
+			}
+		});
+	}
+
+	function initApiForm(){
+
+		$("body").on("click", ".add-button", function(){
+			var $this = $(this);
+			var $parent = $this.parent();
+			
+
+			if($this.val() == "add"){
+				$this.val('remove');
+				// add a new chunk
+				var chunk = $parent.clone();
+
+				$(chunk).appendTo($parent.parent());
+				$(chunk).find('.add-button').val('add');
+				var sortName = Math.floor(Math.random()*1000);
+				var sortVal = 'sort' + sortName;
+				$(chunk).find('input[type=radio]').attr('name', sortVal);
+			}else{
+				$parent.remove();
+			}
+
+		});
+
+	
+		$("body").on("click", ".subtract", function(){
+			var $this = $(this);
+			var num = Number($this.siblings('.to-increment').html());
+			if( num > 0){
+				num--;
+				$this.siblings('.to-increment').html(num);
+			}
+
+
+		});	
+
+		$("body").on("click", ".add", function(){
+			var $this = $(this);
+			var num = Number($this.siblings('.to-increment').val());
+			num++;
+			$this.siblings('.to-increment').val(num);
+
+		});
+
+		
+	}
+
+	function addSort(){
+
+	}
+
 	_this.initGlobalApp = function() {
 		initRollovers();
+		initTags();
+		initApiForm();
 	}
 
 

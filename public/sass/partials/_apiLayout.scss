@@ -1,37 +1,52 @@
 #api-tags{
-	@include horizontal-list;
-
+	@include inline-block-list;
+	margin-left:-3px;
+	
 	li{
-		padding:5px;
-		background:$white;
+		
 		margin:3px;
-
-		@include transition-property(opacity);
-  		@include transition-duration(2s);
-
-		&.selected{
-			color:$blue;
-
-			&:before{
-				content:"x ";
-				color:$badass;
-				font-size:-5;
-			}
-		}
-		&.deselected{
-			color:$ltgrey;
-			@include opacity(.5);
-
-			&:before{
-				content:"+ ";
-			}
-		}
-
-		&:hover{
-			@include opacity(1);
-		}
-
+		cursor: pointer;
+		font-size:$baseSize;
 
 	}
 
+}
+
+.api-form{
+	color:$white;
+
+	form{
+		@include blueprint-form;
+		@include blueprint-form-sizes(100%, 100%);
+
+		input{
+			padding:5px;
+		}
+
+		textarea{
+			height:100px;
+		}
+	}
+
+	.search-on input[type=text]{
+		width:300px;
+	}
+
+	.limit-opts, .start-opts{
+		.add, .subtract{
+			display:inline-block;
+			background:$white;
+			color:$charcoal;
+			cursor:pointer;
+			width:15px;
+			text-align:center;
+		}
+
+		input[type=text]{
+			width:30px;
+		}
+
+	}
+	
+	
 }
