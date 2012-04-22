@@ -60,6 +60,7 @@
 
 	function slideToSlide(target) {
 		if(isAnimating === false) {
+			toggleNavClasses(target)
 			$('.arrows').fadeTo(100, 0);
 			isAnimating === true;
 			animDistance = pageWidth * target;
@@ -79,6 +80,13 @@
 
 	}
 
+	function toggleNavClasses(target){
+		$('#sub-nav li').each(function(){
+			$(this).find('a').removeClass('current');
+		});
+		$('#sub-nav li').eq(3-target).find('a').addClass('current');
+	}
+
 	function slideRight(target) {
 		if(pageIdx < (numPages -1)) {
 			slideToSlide(pageIdx + 1);
@@ -95,6 +103,11 @@
 /**************************************************************************
 *  BIND LISTENERS
 */	
+
+	$('.logo').click(function(e) {
+		e.preventDefault();
+		slideToSlide(0);
+	});
 
 	$('li.demo-link').click(function(e) {
 		e.preventDefault();

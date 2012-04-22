@@ -20,12 +20,25 @@ a.logo {
 	top:36px;
 	left:50%;
 	margin-left:-475px;
+	cursor: pointer;
+}
+
+a{
+	color:$blue;
+	text-decoration:none;
 }
 
 .clear {
 	clear:both;
 }
 
+.blue{
+	color:$blue;
+}
+
+.ltgrey{
+	color:$ltgrey;
+}
 a.arrow-rt {
 	height:77px;
 	width:46px;
@@ -330,11 +343,18 @@ a.arrow-lt:hover {
 						line-height:19px;
 						color: $ltgrey;
 						margin-bottom:20px;
+						clear:both;
 
 						.code {
 							font-weight:bold;
 							color:#FFF;
 						}
+					}
+
+					img{
+						border:1px solid $ltgrey;
+						float:left;
+						margin-right:10px;
 					}
 
 				}

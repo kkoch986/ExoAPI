@@ -11,6 +11,8 @@ $perspective: 400px;
 
 	perspective:$perspective;
 
+
+
 	span{
 		height:45px;
 		display:block;
@@ -52,7 +54,7 @@ $perspective: 400px;
 		}
 	}
 
-	&:hover{
+	&:hover, &.current{
 		span{
 			background:#ccc;
 			-webkit-transform:translate3d(0px,0px,-30px) rotateX(90deg);

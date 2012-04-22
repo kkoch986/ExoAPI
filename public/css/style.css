@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition-duration: 2s;
   perspective: 400px;
 }
-/* line 14, ../sass/partials/_animation.scss */
+/* line 16, ../sass/partials/_animation.scss */
 .sub-link span {
   height: 45px;
   display: block;
@@ -110,7 +110,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 34, ../sass/partials/_animation.scss */
+/* line 36, ../sass/partials/_animation.scss */
 .sub-link span:after {
   padding-top: 3px;
   height: 45px;
@@ -131,8 +131,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
   transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
 }
-/* line 56, ../sass/partials/_animation.scss */
-.sub-link:hover span {
+/* line 58, ../sass/partials/_animation.scss */
+.sub-link:hover span, .sub-link.current span {
   background: #ccc;
   -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
   -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
@@ -140,7 +140,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: translate3d(0px, 0px, -30px) rotateX(90deg);
 }
 
-/* line 68, ../sass/partials/_animation.scss */
+/* line 70, ../sass/partials/_animation.scss */
 .selected, .deselected {
   display: inline-block;
   overflow: hidden;
@@ -156,7 +156,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition-duration: 2s;
   perspective: 400px;
 }
-/* line 77, ../sass/partials/_animation.scss */
+/* line 79, ../sass/partials/_animation.scss */
 .selected span, .deselected span {
   width: 100%;
   display: block;
@@ -177,7 +177,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 97, ../sass/partials/_animation.scss */
+/* line 99, ../sass/partials/_animation.scss */
 .selected span:after, .deselected span:after {
   width: 100%;
   content: "x remove";
@@ -197,7 +197,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
   transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
 }
-/* line 118, ../sass/partials/_animation.scss */
+/* line 120, ../sass/partials/_animation.scss */
 .selected:hover span, .deselected:hover span {
   background: white;
   -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
@@ -206,16 +206,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: translate3d(0px, 0px, -30px) rotateX(90deg);
 }
 
-/* line 130, ../sass/partials/_animation.scss */
+/* line 132, ../sass/partials/_animation.scss */
 .deselected span {
   color: #453e3e;
   background: #787070;
 }
-/* line 134, ../sass/partials/_animation.scss */
+/* line 136, ../sass/partials/_animation.scss */
 .deselected span:after {
   content: "+ add";
 }
-/* line 139, ../sass/partials/_animation.scss */
+/* line 141, ../sass/partials/_animation.scss */
 .deselected:hover span {
   background: white;
 }
@@ -439,14 +439,31 @@ a.logo {
   top: 36px;
   left: 50%;
   margin-left: -475px;
+  cursor: pointer;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
+a {
+  color: #269bdf;
+  text-decoration: none;
+}
+
+/* line 31, ../sass/style.scss */
 .clear {
   clear: both;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
+.blue {
+  color: #269bdf;
+}
+
+/* line 39, ../sass/style.scss */
+.ltgrey {
+  color: #787070;
+}
+
+/* line 42, ../sass/style.scss */
 a.arrow-rt {
   height: 77px;
   width: 46px;
@@ -461,7 +478,7 @@ a.arrow-rt {
   margin-top: -39px;
 }
 
-/* line 43, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 a.arrow-lt {
   height: 77px;
   width: 46px;
@@ -476,17 +493,17 @@ a.arrow-lt {
   margin-top: -39px;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 a.arrow-rt:hover {
   background-position: 0 -77px;
 }
 
-/* line 61, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 a.arrow-lt:hover {
   background-position: 0 -77px;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 #page-holder {
   height: 50px;
   width: 150px;
@@ -501,14 +518,14 @@ a.arrow-lt:hover {
   font-weight: bold;
   overflow: hidden;
 }
-/* line 79, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 #page-holder div {
   position: relative;
   top: 0px;
   padding-right: 5px;
 }
 
-/* line 88, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 #descrip {
   width: 190px;
   position: fixed;
@@ -517,59 +534,59 @@ a.arrow-lt:hover {
   margin-left: -470px;
   text-align: right;
 }
-/* line 96, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 #descrip p {
   font-size: 13px;
   line-height: 17px;
   color: #FFF;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 #main-content {
   width: 651px;
   margin: 0 auto;
   padding-left: 325px;
 }
-/* line 108, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 #main-content #welcome {
   width: 460px;
   margin-bottom: 50px;
 }
-/* line 112, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 #main-content #welcome h2 {
   font-size: 60px;
   color: #FFF;
   font-weight: bold;
   margin-bottom: 20px;
 }
-/* line 119, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 #main-content #welcome p {
   font-size: 13px;
   line-height: 19px;
   color: #FFF;
   font-style: italic;
 }
-/* line 128, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 #main-content #sub-nav {
   width: 651px;
   height: 28px;
   border-top: 1px solid #453e3e;
   margin-top: 130px;
 }
-/* line 134, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 #main-content #sub-nav ul.subnav {
   float: right;
   height: 20px;
   float: right;
   padding-top: 8px;
 }
-/* line 140, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li {
   height: 20px;
   float: right;
   margin-left: 12px;
 }
-/* line 145, ../sass/style.scss */
+/* line 158, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li a.sub-link:link, #main-content #sub-nav ul.subnav li a.sub-link:active, #main-content #sub-nav ul.subnav li a.sub-link:visited {
   font-family: arial, helvetica, san-serif;
   font-size: 14px;
@@ -577,16 +594,16 @@ a.arrow-lt:hover {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 152, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li a.sub-link:link:hover, #main-content #sub-nav ul.subnav li a.sub-link:active:hover, #main-content #sub-nav ul.subnav li a.sub-link:visited:hover {
   color: #269bdf;
 }
-/* line 160, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 #main-content #overflow {
   width: 651px;
   overflow: hidden;
 }
-/* line 165, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 #main-content #overflow ul.slides {
   width: 3051px;
   /*height: 900px;*/
@@ -595,17 +612,17 @@ a.arrow-lt:hover {
   margin-top: 60px;
   overflow: hidden;
 }
-/* line 174, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide {
   width: 651px;
   float: left;
   color: #FFF;
 }
-/* line 182, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets {
   width: 360px;
 }
-/* line 185, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li {
   width: 360px;
   height: 45px;
@@ -614,14 +631,14 @@ a.arrow-lt:hover {
   margin-bottom: 25px;
   overflow: hidden;
 }
-/* line 194, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li .roll-trigger {
   width: 360px;
   height: 45px;
   position: relative;
   top: 0px;
 }
-/* line 200, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li .roll-trigger a.close-button {
   height: 20px;
   width: 18px;
@@ -631,7 +648,7 @@ a.arrow-lt:hover {
   right: 0px;
   display: none;
 }
-/* line 211, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.back-anim {
   width: 0px;
   display: none;
@@ -641,7 +658,7 @@ a.arrow-lt:hover {
   top: 0px;
   left: 0px;
 }
-/* line 221, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.info {
   width: 360px;
   height: 45px;
@@ -649,38 +666,38 @@ a.arrow-lt:hover {
   top: 0px;
   left: 0px;
 }
-/* line 228, ../sass/style.scss */
+/* line 241, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.info a.filler {
   height: 45px;
   width: 360px;
   text-decoration: none;
 }
-/* line 234, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.info h2 {
   font-family: arial, helvetica, san-serif;
   font-size: 30px;
   font-weight: bold;
   color: #FFF;
 }
-/* line 241, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.info h3 {
   font-family: arial, helvetica, san-serif;
   font-size: 11px;
   font-weight: bold;
   color: #787070;
 }
-/* line 250, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded {
   height: 720px;
   width: 360px;
   background: #000;
   position: relative;
 }
-/* line 258, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded div.image-holder {
   position: relative;
 }
-/* line 261, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded div.image-holder a.expand-image {
   position: absolute;
   height: 31px;
@@ -691,14 +708,14 @@ a.arrow-lt:hover {
   bottom: 0px;
   display: none;
 }
-/* line 275, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info {
   width: 340px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
 }
-/* line 281, ../sass/style.scss */
+/* line 294, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li {
   font-size: 12px;
   width: auto;
@@ -707,28 +724,28 @@ a.arrow-lt:hover {
   margin-bottom: 7px;
   color: #FFF;
 }
-/* line 289, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li ul {
   padding-left: 20px;
   padding-top: 5px;
 }
-/* line 294, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li strong {
   font-weight: bold;
   color: #787070;
 }
-/* line 299, ../sass/style.scss */
+/* line 312, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #787070;
 }
-/* line 316, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide #docs, #main-content #overflow ul.slides li.slide #about-slide {
   width: 460px;
 }
-/* line 319, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide #docs h2, #main-content #overflow ul.slides li.slide #about-slide h2 {
   font-family: arial, helvetica, san-serif;
   font-size: 30px;
@@ -736,16 +753,23 @@ a.arrow-lt:hover {
   color: #FFF;
   margin-bottom: 10px;
 }
-/* line 327, ../sass/style.scss */
+/* line 340, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide #docs p, #main-content #overflow ul.slides li.slide #about-slide p {
   font-family: arial, helvetica, san-serif;
   font-size: 14px;
   line-height: 19px;
   color: #787070;
   margin-bottom: 20px;
+  clear: both;
 }
-/* line 334, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 #main-content #overflow ul.slides li.slide #docs p .code, #main-content #overflow ul.slides li.slide #about-slide p .code {
   font-weight: bold;
   color: #FFF;
+}
+/* line 354, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide #docs img, #main-content #overflow ul.slides li.slide #about-slide img {
+  border: 1px solid #787070;
+  float: left;
+  margin-right: 10px;
 }
