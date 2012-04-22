@@ -25,7 +25,7 @@
 	<div class="api-form">
 		
 		<form>
-			<span>http://www.exoapi.org/api/planets/</span>
+			<span>http://www.exoapi.com/api/planets/</span>
 			<input id="url_spot" type="text" placeholder="all/"></input>
 		
 			<p>Filter:</p>
@@ -67,8 +67,10 @@
 				<li class="sort-on">
 					<select class='sort-select'></select>
 
-					<input type="radio" name="sort1" value="asc" checked="checked"> Ascending</input>
-					<input type="radio" name="sort1" value="desc"> Descending</input>
+					<input type="radio" name="sort1" id="sort1asc" value="asc" checked="checked"></input>
+					<label for="sort1asc">Ascending</label>
+					<input type="radio" name="sort1" id="sort1desc" value="desc"></input>
+					<label for="sort1desc">Descending</label>
 
 					<input type="button" value="add" class="add-button"></input>
 				</li>
