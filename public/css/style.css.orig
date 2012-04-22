@@ -1,0 +1,613 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* Colors
+------------------------------------------------------------ */
+/* Font Sizes
+------------------------------------------------------------ */
+/* line 3, ../sass/partials/_animation.scss */
+.sub-link {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-top: 3px;
+  -webkit-transition-property: perspective;
+  -moz-transition-property: perspective;
+  -ms-transition-property: perspective;
+  -o-transition-property: perspective;
+  transition-property: perspective;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -ms-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+  perspective: 400px;
+}
+/* line 14, ../sass/partials/_animation.scss */
+.sub-link span {
+  height: 45px;
+  display: block;
+  position: relative;
+  padding: 0 2px;
+  color: white;
+  background: #1b1818;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 34, ../sass/partials/_animation.scss */
+.sub-link span:after {
+  padding-top: 3px;
+  height: 45px;
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 2px;
+  color: white;
+  background: #269bdf;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -moz-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+}
+/* line 56, ../sass/partials/_animation.scss */
+.sub-link:hover span {
+  background: #ccc;
+  -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -o-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+/* line 67, ../sass/partials/_animation.scss */
+.selected, .deselected {
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transition-property: perspective;
+  -moz-transition-property: perspective;
+  -ms-transition-property: perspective;
+  -o-transition-property: perspective;
+  transition-property: perspective;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -ms-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+  perspective: 400px;
+}
+/* line 76, ../sass/partials/_animation.scss */
+.selected span, .deselected span {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 5px;
+  color: #1b1818;
+  background: white;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 96, ../sass/partials/_animation.scss */
+.selected span:after, .deselected span:after {
+  width: 100%;
+  content: "x remove";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  color: white;
+  background: #269bdf;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -moz-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+}
+/* line 117, ../sass/partials/_animation.scss */
+.selected:hover span, .deselected:hover span {
+  background: white;
+  -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -o-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+/* line 129, ../sass/partials/_animation.scss */
+.deselected span {
+  color: #453e3e;
+  background: #787070;
+}
+/* line 133, ../sass/partials/_animation.scss */
+.deselected span:after {
+  content: "+ add";
+}
+/* line 138, ../sass/partials/_animation.scss */
+.deselected:hover span {
+  background: white;
+}
+
+/* line 1, ../sass/partials/_apiLayout.scss */
+#api-tags {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: -3px;
+}
+<<<<<<< HEAD
+
+=======
+/* line 49, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_inline-block-list.scss */
+>>>>>>> 283a0f5db9ed1fd6bd51d8291f62daa1bd748124
+#api-tags li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  white-space: nowrap;
+}
+<<<<<<< HEAD
+
+/* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#api-tags li:first-child, #api-tags li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#api-tags li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#api-tags li.last {
+  padding-right: 0;
+/* line 7, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+=======
+/* line 7, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+>>>>>>> 283a0f5db9ed1fd6bd51d8291f62daa1bd748124
+#api-tags li {
+  *display: inline;
+}
+/* line 5, ../sass/partials/_apiLayout.scss */
+#api-tags li {
+  margin: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* line 15, ../sass/partials/_apiLayout.scss */
+.api-form {
+  color: white;
+}
+/* line 18, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form label {
+  font-weight: bold;
+}
+/* line 19, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+}
+/* line 20, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form legend {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password] {
+  margin: 0.5em 0;
+  background-color: white;
+  padding: 5px;
+}
+/* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.title {
+  font-size: 1.5em;
+}
+/* line 29, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form textarea {
+  margin: 0.5em 0;
+  padding: 5px;
+}
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form select {
+  margin: 0.5em 0;
+}
+/* line 55, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form fieldset {
+  border: 1px solid #cccccc;
+}
+/* line 58, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password],
+.api-form form textarea {
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+}
+/* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text:focus, .api-form form input.title:focus, .api-form form input[type=email]:focus, .api-form form input[type=text]:focus, .api-form form input[type=password]:focus,
+.api-form form textarea:focus {
+  border-color: #666666;
+}
+/* line 65, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form select {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+/* line 44, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password] {
+  width: 300px;
+}
+/* line 46, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form textarea {
+  width: 390px;
+  height: 250px;
+}
+/* line 44, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password] {
+  width: 100%;
+}
+/* line 46, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form textarea {
+  width: 100%;
+  height: 250px;
+}
+/* line 22, ../sass/partials/_apiLayout.scss */
+.api-form form input {
+  padding: 5px;
+}
+/* line 26, ../sass/partials/_apiLayout.scss */
+.api-form form textarea {
+  height: 100px;
+}
+/* line 31, ../sass/partials/_apiLayout.scss */
+.api-form .search-on input[type=text] {
+  width: 300px;
+}
+/* line 36, ../sass/partials/_apiLayout.scss */
+.api-form .limit-opts .add, .api-form .limit-opts .subtract, .api-form .start-opts .add, .api-form .start-opts .subtract {
+  display: inline-block;
+  background: white;
+  color: #453e3e;
+  cursor: pointer;
+  width: 15px;
+  text-align: center;
+}
+/* line 45, ../sass/partials/_apiLayout.scss */
+.api-form .limit-opts input[type=text], .api-form .start-opts input[type=text] {
+  width: 30px;
+}
+
+/* line 9, ../sass/style.scss */
+body {
+  font-family: Helvetica, sans-serif;
+  background: url("/images/bg-text.png") top center no-repeat #1b1818;
+  background-attachment: fixed;
+}
+
+/* line 15, ../sass/style.scss */
+body strong {
+  font-weight: strong;
+}
+
+/* line 17, ../sass/style.scss */
+a.logo {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('../images/logo.jpg?1335046331');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 192px;
+  height: 116px;
+  position: fixed;
+  top: 36px;
+  left: 50%;
+  margin-left: -464px;
+}
+
+/* line 25, ../sass/style.scss */
+a.arrow-rt {
+  height: 77px;
+  width: 46px;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  margin-right: -470px;
+  background: url("/images/arrow-rt.jpg") no-repeat;
+  background-position: 0 0;
+  overflow: hidden;
+  display: block;
+  margin-top: -39px;
+}
+
+/* line 39, ../sass/style.scss */
+a.arrow-rt:hover {
+  background-position: 0 -77px;
+}
+
+/* line 43, ../sass/style.scss */
+#page-holder {
+  height: 30px;
+  width: 100px;
+  position: fixed;
+  top: 124px;
+  left: 50%;
+  margin-left: -270px;
+}
+/* line 51, ../sass/style.scss */
+#page-holder a.page-title:link, #page-holder a.page-title:active, #page-holder a.page-title:visited, #page-holder a.page-title:hover {
+  color: #453e3e;
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* line 60, ../sass/style.scss */
+#main-content {
+  width: 651px;
+  margin: 0 auto;
+  padding-left: 325px;
+}
+/* line 65, ../sass/style.scss */
+#main-content #sub-nav {
+  width: 651px;
+  height: 28px;
+  border-top: 1px solid #453e3e;
+  margin-top: 130px;
+}
+/* line 71, ../sass/style.scss */
+#main-content #sub-nav ul.subnav {
+  float: right;
+  height: 20px;
+  float: right;
+  padding-top: 8px;
+}
+/* line 77, ../sass/style.scss */
+#main-content #sub-nav ul.subnav li {
+  height: 20px;
+  float: right;
+  margin-left: 12px;
+}
+/* line 82, ../sass/style.scss */
+#main-content #sub-nav ul.subnav li a.sub-link:link, #main-content #sub-nav ul.subnav li a.sub-link:active, #main-content #sub-nav ul.subnav li a.sub-link:visited {
+  font-family: arial, helvetica, san-serif;
+  font-size: 14px;
+  color: #453e3e;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 89, ../sass/style.scss */
+#main-content #sub-nav ul.subnav li a.sub-link:link:hover, #main-content #sub-nav ul.subnav li a.sub-link:active:hover, #main-content #sub-nav ul.subnav li a.sub-link:visited:hover {
+  color: #269bdf;
+}
+/* line 97, ../sass/style.scss */
+#main-content ul.slides {
+  width: 651px;
+  height: 900px;
+}
+/* line 102, ../sass/style.scss */
+#main-content ul.slides li.slide {
+  width: 651px;
+  height: 900px;
+}
+/* line 107, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets {
+  width: 360px;
+  margin-top: 60px;
+}
+/* line 111, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li {
+  width: 360px;
+  height: 45px;
+  position: relative;
+  float: left;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+/* line 120, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li .roll-trigger {
+  width: 360px;
+  height: 45px;
+  position: relative;
+  top: 0px;
+}
+/* line 126, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li .roll-trigger a.close-button {
+  height: 20px;
+  width: 18px;
+  background: url("/images/close_button.png") top left no-repeat;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: none;
+}
+/* line 137, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.back-anim {
+  width: 0px;
+  display: none;
+  height: 45px;
+  background-color: #269bdf;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+/* line 147, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info {
+  width: 360px;
+  height: 45px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+/* line 154, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info a.filler {
+  height: 45px;
+  width: 360px;
+  text-decoration: none;
+}
+/* line 160, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info h2 {
+  font-family: arial, helvetica, san-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFF;
+}
+/* line 167, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info h3 {
+  font-family: arial, helvetica, san-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #787070;
+}
+/* line 176, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded {
+  height: 720px;
+  width: 360px;
+  background: #000;
+  position: relative;
+}
+/* line 184, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded div.image-holder {
+  position: relative;
+}
+/* line 187, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded div.image-holder a.expand-image {
+  position: absolute;
+  height: 31px;
+  width: 31px;
+  background: url("/images/expand-image.jpg") top left no-repeat;
+  display: block;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+}
+/* line 201, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info {
+  width: 340px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+/* line 207, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li {
+  font-size: 12px;
+  width: auto;
+  height: auto;
+  float: none;
+  margin-bottom: 7px;
+  color: #FFF;
+}
+/* line 215, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li ul {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+/* line 220, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li strong {
+  font-weight: bold;
+  color: #787070;
+}
+/* line 225, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #787070;
+}

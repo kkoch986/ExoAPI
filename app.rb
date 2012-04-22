@@ -64,6 +64,14 @@ get '/api/planets/:id' do
 		planets = collection.find({:_id => params[:id].to_s}, opts).sort(sort)
 	end
 
+
+	if(!params[:limit].nil?)
+		planets.limit(params[:limit].to_i)
+	end
+
+	if(!params[:start].nil?)
+		planets.skip(Integer(params[:start].to_i))
+	end
 	
 	return_response(planets.to_a)
 end
