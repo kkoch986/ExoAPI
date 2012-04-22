@@ -1,5 +1,3 @@
-gem "bson_ext"
-gem "mongo"
 gem "mongodb"
 gem "sinatra"
 gem "json_pure"
