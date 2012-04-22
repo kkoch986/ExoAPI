@@ -31,6 +31,19 @@
 		$('#page-holder').html(pageNames[target]);
 	}
 
+	function setArrows(target) {
+		if(target <= 0) {
+			$('a.arrow-lt').hide();
+			$('a.arrow-rt').show();
+		} else if (target >= (numPages -1)) {
+			$('a.arrow-lt').show();
+			$('a.arrow-rt').hide();
+		} else {
+			$('a.arrow-lt').show();
+			$('a.arrow-rt').show();
+		}
+	}
+
 	function resizeWrapper(target) {
 		var setHeight = parseInt($('li.slide').eq(target).height());
 		setHeight += 100;
@@ -55,6 +68,7 @@
 			$('ul.slides').animate({left: - animDistance},function() {
 				setPageName(target);
 				$('.arrows').fadeTo(200, 1);
+				setArrows(target)
 				pageIdx = target;
 				isAnimating = false;
 			});

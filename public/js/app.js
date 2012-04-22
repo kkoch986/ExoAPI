@@ -87,14 +87,19 @@ var Exo = (function (obj) {
 			if($this.val() == "add"){
 				$this.val('remove');
 				// add a new chunk
+				var radioSelect = $parent.find($('input[type=radio]:checked'));
 				var chunk = $parent.clone();
-
+				
 				$(chunk).appendTo($parent.parent());
 				$(chunk).find('.add-button').val('add');
 				var sortName = Math.floor(Math.random()*1000);
 				var sortVal = 'sort' + sortName;
+
 				$(chunk).find('input[type=radio]').attr('name', sortVal);
 				$("input[type=text]", chunk).val("");
+				$("input[type=radio]:first-child", chunk).attr("checked", "checked");
+
+				radioSelect.attr('checked', 'checked');
 			}else{
 				$parent.remove();
 			}

@@ -14,6 +14,12 @@
 
 .api-form{
 	color:$white;
+	width:80%;
+
+	p{
+		font-size: $baseSize + 5px;
+		margin:20px 0 5px 0;
+	}
 
 	form{
 		@include blueprint-form;
@@ -26,10 +32,58 @@
 		textarea{
 			height:300px;
 		}
+
+		select{
+			-webkit-appearance: button;
+			-webkit-border-radius: 2px;
+			-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+			-webkit-padding-end: 20px;
+			-webkit-padding-start: 2px;
+			-webkit-user-select: none;
+			background-image: url(../images/select-arrow.png), 
+			-webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+			background-position: center right;
+			background-repeat: no-repeat;
+			border: 1px solid $charcoal;
+			color: $charcoal;
+			font-size: inherit;
+			margin: 0;
+			overflow: hidden;
+			padding: 3px 20px 3px 3px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width:150px;
+		}
+
+		input[type=button], button{
+			
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+			background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+			background-color:$white;
+			border:1px solid $white;
+			display:inline-block;
+			color:$charcoal;
+			font-size:$baseSize;
+			font-weight:bold;
+			padding:5px 14px 2px;
+			text-decoration:none;
+				&:hover {
+					background:$blue;
+					color:$white;
+					border:1px solid $blue;
+				}
+				&:active {
+					position:relative;
+					top:1px;
+				}	
+		}
+
 	}
 
 	.search-on input[type=text]{
-		width:300px;
+		width:200px;
+		padding: 6px 6px 3px 6px;
 	}
 
 	.limit-opts, .start-opts{
@@ -39,7 +93,13 @@
 			color:$charcoal;
 			cursor:pointer;
 			width:15px;
+			padding: 4px 4px 5px;
 			text-align:center;
+
+			&:hover{
+				background:$blue;
+				color:$white;
+			}
 		}
 
 		input[type=text]{
@@ -47,6 +107,8 @@
 		}
 
 	}
+
+
 	
 	
 }
