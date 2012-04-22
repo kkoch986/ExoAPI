@@ -11,6 +11,19 @@ var Exo = (function (obj) {
 	}
 
 	function initRollovers() {
+
+		$('a.filler').each(function(){
+			var $this = $(this);
+			var dataTitle = $this.innerHTML();
+			console.log(dataTitle);
+			var embed = '<span data-title="' + dataTitle + '">' + dataTitle + '</span>';
+			$this.innerHTML(embed);
+
+		});
+
+
+
+
 		$('li.roll-trigger').mouseenter(function() {
 			$(this).find('div.back-anim').show();
 			$(this).find('div.back-anim').stop(true, true).animate({height:'45px'}, 100);
