@@ -73,23 +73,108 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   font-family: Helvetica, sans-serif;
   background: url("/images/bg-text.png") top center no-repeat #1b1818;
+  background-attachment: fixed;
 }
 
-/* line 14, ../sass/style.scss */
+/* line 15, ../sass/style.scss */
 a.logo {
   width: 192px;
   height: 116px;
   background: url("/images/logo.jpg") top left;
   display: block;
   position: fixed;
-  top: 0px;
+  top: 36px;
   left: 50%;
-  margin-left: -300px;
+  margin-left: -464px;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 #main-content {
   width: 651px;
   margin: 0 auto;
   padding-left: 325px;
+}
+/* line 31, ../sass/style.scss */
+#main-content #sub-nav {
+  width: 651px;
+  height: 28px;
+  border-top: 1px solid #453e3e;
+  margin-top: 130px;
+}
+/* line 37, ../sass/style.scss */
+#main-content #sub-nav ul.subnav {
+  float: right;
+  height: 20px;
+  float: right;
+  padding-top: 8px;
+}
+/* line 43, ../sass/style.scss */
+#main-content #sub-nav ul.subnav li {
+  height: 20px;
+  float: right;
+  margin-left: 12px;
+}
+/* line 48, ../sass/style.scss */
+#main-content #sub-nav ul.subnav li a.sub-link:link, #main-content #sub-nav ul.subnav li a.sub-link:active, #main-content #sub-nav ul.subnav li a.sub-link:visited {
+  font-family: arial, helvetica, san-serif;
+  font-size: 14px;
+  color: #453e3e;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 55, ../sass/style.scss */
+#main-content #sub-nav ul.subnav li a.sub-link:link:hover, #main-content #sub-nav ul.subnav li a.sub-link:active:hover, #main-content #sub-nav ul.subnav li a.sub-link:visited:hover {
+  color: #269bdf;
+}
+/* line 63, ../sass/style.scss */
+#main-content ul.planets {
+  width: 360px;
+  margin-top: 60px;
+}
+/* line 67, ../sass/style.scss */
+#main-content ul.planets li.roll-trigger {
+  width: 360px;
+  height: 45px;
+  position: relative;
+  float: left;
+  margin-bottom: 25px;
+}
+/* line 74, ../sass/style.scss */
+#main-content ul.planets li.roll-trigger div.back-anim {
+  width: 360px;
+  display: none;
+  height: 0px;
+  position: relative;
+  background-color: #269bdf;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+/* line 85, ../sass/style.scss */
+#main-content ul.planets li.roll-trigger div.info {
+  width: 360px;
+  height: 45px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+/* line 92, ../sass/style.scss */
+#main-content ul.planets li.roll-trigger div.info a.filler {
+  height: 45px;
+  width: 360px;
+  text-decoration: none;
+}
+/* line 98, ../sass/style.scss */
+#main-content ul.planets li.roll-trigger div.info h2 {
+  font-family: arial, helvetica, san-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFF;
+}
+/* line 105, ../sass/style.scss */
+#main-content ul.planets li.roll-trigger div.info h3 {
+  font-family: arial, helvetica, san-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #787070;
 }
