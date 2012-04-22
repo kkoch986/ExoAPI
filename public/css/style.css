@@ -140,7 +140,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: translate3d(0px, 0px, -30px) rotateX(90deg);
 }
 
-/* line 67, ../sass/partials/_animation.scss */
+/* line 68, ../sass/partials/_animation.scss */
 .selected, .deselected {
   display: inline-block;
   overflow: hidden;
@@ -156,7 +156,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition-duration: 2s;
   perspective: 400px;
 }
-/* line 76, ../sass/partials/_animation.scss */
+/* line 77, ../sass/partials/_animation.scss */
 .selected span, .deselected span {
   width: 100%;
   display: block;
@@ -177,7 +177,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 96, ../sass/partials/_animation.scss */
+/* line 97, ../sass/partials/_animation.scss */
 .selected span:after, .deselected span:after {
   width: 100%;
   content: "x remove";
@@ -197,7 +197,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
   transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
 }
-/* line 117, ../sass/partials/_animation.scss */
+/* line 118, ../sass/partials/_animation.scss */
 .selected:hover span, .deselected:hover span {
   background: white;
   -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
@@ -206,16 +206,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: translate3d(0px, 0px, -30px) rotateX(90deg);
 }
 
-/* line 129, ../sass/partials/_animation.scss */
+/* line 130, ../sass/partials/_animation.scss */
 .deselected span {
   color: #453e3e;
   background: #787070;
 }
-/* line 133, ../sass/partials/_animation.scss */
+/* line 134, ../sass/partials/_animation.scss */
 .deselected span:after {
   content: "+ add";
 }
-/* line 138, ../sass/partials/_animation.scss */
+/* line 139, ../sass/partials/_animation.scss */
 .deselected:hover span {
   background: white;
 }

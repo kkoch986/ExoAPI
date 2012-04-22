@@ -62,6 +62,7 @@
 			$('.arrows').fadeTo(100, 0);
 			isAnimating === true;
 			animDistance = pageWidth * target;
+			$('#page-holder div').animate({top: '-100px'}, 1000, function() {});
 
 			resizeWrapper(target);
 			$('body').animate({scrollTop : 0},'slow');
@@ -71,6 +72,7 @@
 				setArrows(target)
 				pageIdx = target;
 				isAnimating = false;
+				$('#page-holder div').animate({top: '0px'}, 1000, function() {});
 			});
 		}
 
