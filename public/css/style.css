@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -142,7 +142,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   overflow: hidden;
   *zoom: 1;
 }
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li {
   list-style-image: none;
   list-style-type: none;
@@ -153,15 +153,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding-left: 4px;
   padding-right: 4px;
 }
-/* line 48, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li:first-child, #api-tags li.first {
   padding-left: 0;
 }
-/* line 49, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 49, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li:last-child {
   padding-right: 0;
 }
-/* line 50, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 50, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li.last {
   padding-right: 0;
 }
@@ -215,11 +215,16 @@ body {
 }
 
 /* line 15, ../sass/style.scss */
+body strong {
+  font-weight: strong;
+}
+
+/* line 17, ../sass/style.scss */
 a.logo {
   text-indent: 110%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url('../images/logo.jpg?1335058090');
+  background-image: url('../images/logo.jpg?1335046331');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 192px;
@@ -230,33 +235,70 @@ a.logo {
   margin-left: -464px;
 }
 
-/* line 23, ../sass/style.scss */
+/* line 25, ../sass/style.scss */
+a.arrow-rt {
+  height: 77px;
+  width: 46px;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  margin-right: -470px;
+  background: url("/images/arrow-rt.jpg") no-repeat;
+  background-position: 0 0;
+  overflow: hidden;
+  display: block;
+  margin-top: -39px;
+}
+
+/* line 39, ../sass/style.scss */
+a.arrow-rt:hover {
+  background-position: 0 -77px;
+}
+
+/* line 43, ../sass/style.scss */
+#page-holder {
+  height: 30px;
+  width: 100px;
+  position: fixed;
+  top: 124px;
+  left: 50%;
+  margin-left: -270px;
+}
+/* line 51, ../sass/style.scss */
+#page-holder a.page-title:link, #page-holder a.page-title:active, #page-holder a.page-title:visited, #page-holder a.page-title:hover {
+  color: #453e3e;
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* line 60, ../sass/style.scss */
 #main-content {
   width: 651px;
   margin: 0 auto;
   padding-left: 325px;
 }
-/* line 28, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 #main-content #sub-nav {
   width: 651px;
   height: 28px;
   border-top: 1px solid #453e3e;
   margin-top: 130px;
 }
-/* line 34, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 #main-content #sub-nav ul.subnav {
   float: right;
   height: 20px;
   float: right;
   padding-top: 8px;
 }
-/* line 40, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li {
   height: 20px;
   float: right;
   margin-left: 12px;
 }
-/* line 45, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li a.sub-link:link, #main-content #sub-nav ul.subnav li a.sub-link:active, #main-content #sub-nav ul.subnav li a.sub-link:visited {
   font-family: arial, helvetica, san-serif;
   font-size: 14px;
@@ -264,59 +306,141 @@ a.logo {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 52, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li a.sub-link:link:hover, #main-content #sub-nav ul.subnav li a.sub-link:active:hover, #main-content #sub-nav ul.subnav li a.sub-link:visited:hover {
   color: #269bdf;
 }
-/* line 60, ../sass/style.scss */
-#main-content ul.planets {
+/* line 97, ../sass/style.scss */
+#main-content ul.slides {
+  width: 651px;
+  height: 900px;
+}
+/* line 102, ../sass/style.scss */
+#main-content ul.slides li.slide {
+  width: 651px;
+  height: 900px;
+}
+/* line 107, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets {
   width: 360px;
   margin-top: 60px;
 }
-/* line 64, ../sass/style.scss */
-#main-content ul.planets li.roll-trigger {
+/* line 111, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li {
   width: 360px;
   height: 45px;
   position: relative;
   float: left;
   margin-bottom: 25px;
+  overflow: hidden;
 }
-/* line 71, ../sass/style.scss */
-#main-content ul.planets li.roll-trigger div.back-anim {
+/* line 120, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li .roll-trigger {
   width: 360px;
-  display: none;
-  height: 0px;
+  height: 45px;
   position: relative;
+  top: 0px;
+}
+/* line 126, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li .roll-trigger a.close-button {
+  height: 20px;
+  width: 18px;
+  background: url("/images/close_button.png") top left no-repeat;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: none;
+}
+/* line 137, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.back-anim {
+  width: 0px;
+  display: none;
+  height: 45px;
   background-color: #269bdf;
   position: absolute;
   top: 0px;
   left: 0px;
 }
-/* line 82, ../sass/style.scss */
-#main-content ul.planets li.roll-trigger div.info {
+/* line 147, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info {
   width: 360px;
   height: 45px;
   position: absolute;
   top: 0px;
   left: 0px;
 }
-/* line 89, ../sass/style.scss */
-#main-content ul.planets li.roll-trigger div.info a.filler {
+/* line 154, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info a.filler {
   height: 45px;
   width: 360px;
   text-decoration: none;
 }
-/* line 95, ../sass/style.scss */
-#main-content ul.planets li.roll-trigger div.info h2 {
+/* line 160, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info h2 {
   font-family: arial, helvetica, san-serif;
   font-size: 30px;
   font-weight: bold;
   color: #FFF;
 }
-/* line 102, ../sass/style.scss */
-#main-content ul.planets li.roll-trigger div.info h3 {
+/* line 167, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.info h3 {
   font-family: arial, helvetica, san-serif;
   font-size: 11px;
   font-weight: bold;
+  color: #787070;
+}
+/* line 176, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded {
+  height: 720px;
+  width: 360px;
+  background: #000;
+  position: relative;
+}
+/* line 184, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded div.image-holder {
+  position: relative;
+}
+/* line 187, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded div.image-holder a.expand-image {
+  position: absolute;
+  height: 31px;
+  width: 31px;
+  background: url("/images/expand-image.jpg") top left no-repeat;
+  display: block;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+}
+/* line 201, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info {
+  width: 340px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+/* line 207, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li {
+  font-size: 12px;
+  width: auto;
+  height: auto;
+  float: none;
+  margin-bottom: 7px;
+  color: #FFF;
+}
+/* line 215, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li ul {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+/* line 220, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li strong {
+  font-weight: bold;
+  color: #787070;
+}
+/* line 225, ../sass/style.scss */
+#main-content ul.slides li.slide ul.planets li div.expanded ul.info li h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: #787070;
 }

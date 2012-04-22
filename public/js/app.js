@@ -21,14 +21,14 @@ var Exo = (function (obj) {
 		// });
 
 
-		$('li.roll-trigger').mouseenter(function() {
+		$('.roll-trigger').mouseenter(function() {
 			$(this).find('div.back-anim').show();
-			$(this).find('div.back-anim').stop(true, true).animate({height:'45px'}, 100);
+			$(this).find('div.back-anim').delay(700).stop(true, true).animate({width:'360px'}, 400, 'easeOutQuad');
 			$(this).find('h3').css({color: '#FFF'});
 		});
 
-		$('li.roll-trigger').mouseleave(function() {
-			$(this).find('div.back-anim').stop(true, true).animate({height:'0px'}, 100, 
+		$('.roll-trigger').mouseleave(function() {
+			$(this).find('div.back-anim').stop(true, true).animate({width:'0px'}, 600, 
 				function() {
 					$(this).hide();
 
