@@ -4,7 +4,7 @@ require 'json/pure'
 require 'mongo'
 include Mongo
 
-db = Connection.new(ENV['MONGOHQ_URL']).db('test')
+db = Connection.new("172.16.3.30").db('test')
 
 ###############################################################################################################
 ##################################### API ... #################################################################
@@ -120,12 +120,6 @@ get '/' do
 	erb :index
 end
 
-<<<<<<< HEAD
-
-get '/interactive' do 
-	erb :interactive
-=======
 get '/api_demo' do 
 	erb :api_demo
->>>>>>> 2cb6376c0d410cfc0901193074215c3873092a71
 end
