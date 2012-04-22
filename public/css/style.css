@@ -358,7 +358,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-size: inherit;
   margin: 0;
   overflow: hidden;
-  padding: 3px 20px 3px 0;
+  padding: 3px 20px 3px 3px;
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 150px;
