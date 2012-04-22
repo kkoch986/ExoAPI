@@ -1,15 +1,16 @@
 $perspective: 400px;
 
-.roll{
+.sub-link{
 	display:inline-block;
 	overflow:hidden;
 	vertical-align:top;
+	padding-top:3px;
 	-webkit-perspective:$perspective;
 	-moz-perspective:$perspective;
 	-o-perspective:$perspective;
 	perspective:$perspective;}
 
-.roll span{
+.sub-link span{
 	height:45px;
 	display:block;
 	position:relative;
@@ -30,14 +31,15 @@ $perspective: 400px;
 	transform-style:preserve-3d;
 }
 
-.roll:hover span{
+.sub-link:hover span{
 	background:#ccc;-webkit-transform:translate3d(0px,0px,-30px) rotateX(90deg);
 	-moz-transform:translate3d(0px,0px,-30px) rotateX(90deg);
 	-o-transform:translate3d(0px,0px,-30px) rotateX(90deg);
 	transform:translate3d(0px,0px,-30px) rotateX(90deg);
 }
 
-.roll span:after{
+.sub-link span:after{
+	padding-top:3px;
 	height:45px;
 	content:attr(data-title);
 	display:block;position:absolute;

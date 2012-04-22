@@ -70,18 +70,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Colors
 ------------------------------------------------------------ */
 /* line 3, ../sass/partials/_animation.scss */
-.roll {
+.sub-link {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
+  padding-top: 3px;
   -webkit-perspective: 400px;
   -moz-perspective: 400px;
   -o-perspective: 400px;
   perspective: 400px;
 }
 
-/* line 12, ../sass/partials/_animation.scss */
-.roll span {
+/* line 13, ../sass/partials/_animation.scss */
+.sub-link span {
   height: 45px;
   display: block;
   position: relative;
@@ -102,8 +103,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform-style: preserve-3d;
 }
 
-/* line 33, ../sass/partials/_animation.scss */
-.roll:hover span {
+/* line 34, ../sass/partials/_animation.scss */
+.sub-link:hover span {
   background: #ccc;
   -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
   -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
@@ -111,8 +112,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: translate3d(0px, 0px, -30px) rotateX(90deg);
 }
 
-/* line 40, ../sass/partials/_animation.scss */
-.roll span:after {
+/* line 41, ../sass/partials/_animation.scss */
+.sub-link span:after {
+  padding-top: 3px;
   height: 45px;
   content: attr(data-title);
   display: block;
