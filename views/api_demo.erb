@@ -25,40 +25,40 @@
 	<div class="api-form">
 		
 		<form>
-			<span>http://www.exoapi.org/api?</span>
-			<input type="text" placeholder="sdfksjdh"></input>
+			<span>http://www.exoapi.org/api/planets/</span>
+			<input id="url_spot" type="text" placeholder="all/"></input>
 		
 			<p>Filter:</p>
 			<ul id="api-tags">
-				<li class="selected"><span>name</span></li>
-				<li class="selected"><span>id</span></li>
-				<li class="selected"><span>discoverymethod</span></li>
-				<li class="selected"><span>properties:mass</span></li>
-				<li class="selected"><span>properties:radius</span></li>
-				<li class="selected"><span>properties:orbit:period</span></li>
-				<li class="selected"><span>properties:orbit:semimajoraxis</span></li>
-				<li class="selected"><span>properties:orbit:eccentricity</span></li>
-				<li class="selected"><span>properties:orbit:inclination</span></li>
-				<li class="selected"><span>star:spectraltype</span></li>
-				<li class="selected"><span>star:mass</span></li>
-				<li class="selected"><span>star:radius</span></li>
-				<li class="selected"><span>star:metallicity</span></li>
-				<li class="selected"><span>star:rightascension</span></li>
-				<li class="selected"><span>star:declination</span></li>
-				<li class="selected"><span>star:angulardistance</span></li>
-				<li class="selected"><span>star:distance</span></li>
-				<li class="selected"><span>star:magV</span></li>
-				<li class="selected"><span>star:magI</span></li>
-				<li class="selected"><span>star:magH</span></li>
-				<li class="selected"><span>star:magJ</span></li>
-				<li class="selected"><span>star:magK</span></li>
-				<li class="selected"><span>multiplicity</span></li>
-				<li class="selected"><span>discoveryyear</span></li>
-				<li class="selected"><span>lastupdate</span></li>
-				<li class="selected"><span>description</span></li>
-				<li class="selected"><span>new</span></li>
-				<li class="selected"><span>image</span></li>
-				<li class="selected"><span>imagedescription</span></li>
+				<li class="deselected"><span>name</span></li>
+				<li class="deselected"><span>_id</span></li>
+				<li class="deselected"><span>discoverymethod</span></li>
+				<li class="deselected"><span>properties.mass</span></li>
+				<li class="deselected"><span>properties.radius</span></li>
+				<li class="deselected"><span>properties.orbit.period</span></li>
+				<li class="deselected"><span>properties.orbit.semimajoraxis</span></li>
+				<li class="deselected"><span>properties.orbit.eccentricity</span></li>
+				<li class="deselected"><span>properties.orbit.inclination</span></li>
+				<li class="deselected"><span>star.spectraltype</span></li>
+				<li class="deselected"><span>star.mass</span></li>
+				<li class="deselected"><span>star.radius</span></li>
+				<li class="deselected"><span>star.metallicity</span></li>
+				<li class="deselected"><span>star.rightascension</span></li>
+				<li class="deselected"><span>star.declination</span></li>
+				<li class="deselected"><span>star.angulardistance</span></li>
+				<li class="deselected"><span>star.distance</span></li>
+				<li class="deselected"><span>star.magV</span></li>
+				<li class="deselected"><span>star.magI</span></li>
+				<li class="deselected"><span>star.magH</span></li>
+				<li class="deselected"><span>star.magJ</span></li>
+				<li class="deselected"><span>star.magK</span></li>
+				<li class="deselected"><span>multiplicity</span></li>
+				<li class="deselected"><span>discoveryyear</span></li>
+				<li class="deselected"><span>lastupdate</span></li>
+				<li class="deselected"><span>description</span></li>
+				<li class="deselected"><span>new</span></li>
+				<li class="deselected"><span>image</span></li>
+				<li class="deselected"><span>imagedescription</span></li>
 			</ul>
 			<!-- END API TAGS -->
 
@@ -67,8 +67,8 @@
 				<li class="sort-on">
 					<select class='sort-select'></select>
 
-					<input type="radio" name="sort1" value="asc"> Ascending</input>
-					<input type="radio" name="sort1" value="dec"> Decending</input>
+					<input type="radio" name="sort1" value="asc" checked="checked"> Ascending</input>
+					<input type="radio" name="sort1" value="desc"> Descending</input>
 
 					<input type="button" value="add" class="add-button"></input>
 				</li>
@@ -77,11 +77,21 @@
 			<p>Search:</p>
 			<ul id="search-opts">
 				<li class="search-on">
-					<input type="text" placeholder="search term"></input>
 
-					<input type="radio" name="search1" value="lt"> &lt;</input>
+					<select class='sort-select'></select>
+
+					<!-- <input type="radio" name="search1" value="lt"> &lt;</input>
 					<input type="radio" name="search1" value="gt"> &gt;</input>
-					<input type="radio" name="search1" value="eq"> ==</input>
+					<input type="radio" name="search1" value="eq"> ==</input> -->
+					<select name="search_type">
+						<option value=":gte">&gt;=</option>
+						<option value=":gt">&gt;</option>
+						<option value="" selected="selected">==</option>
+						<option value=":lt">&lt;</option>
+						<option value=":lte">&lt;=</option>
+					</select>
+
+					<input type="text" placeholder="value"></input>
 
 					<input type="button" value="add" class="add-button"></input>
 				</li>
@@ -91,20 +101,27 @@
 			<div class="limit-opts">
 				<p>Limit:</p>
 				<span class="subtract">-</span>
-				<input type="text" class="to-increment" value="0"></input>
+				<input type="text" class="to-increment" value="0" id="limit_input"></input>
 				<span class="add">+</span>
 			</div>
 
 			<div class="start-opts">
 				<p>Start:</p>
 				<span class="subtract">-</span>
-				<input type="text" class="to-increment" value="0"></input>
+				<input type="text" class="to-increment" value="0" id="start_input"></input>
 				<span class="add">+</span>
 			</div>
 
+			<br />
+			<div id="control_buttons">
+				<button id="refresh">Refresh URL</button>
+				<button id="send">Try Query</button>
+			</div>
+			<br />
+
 			<div id="api-response">
 				<p>Response:</p>
-				<textarea></textarea>
+				<textarea readonly="readonly"></textarea>
 			</div>
 		</form>
 	</div>
