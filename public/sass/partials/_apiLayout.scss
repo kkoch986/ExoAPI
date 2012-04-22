@@ -87,6 +87,10 @@
 	}
 
 	.limit-opts, .start-opts{
+		width:50%;
+		float:left;
+		margin-bottom:20px;
+
 		.add, .subtract{
 			display:inline-block;
 			background:$white;
@@ -105,6 +109,11 @@
 		input[type=text]{
 			width:30px;
 		}
+
+	}
+
+	.start-opts:after{
+		clear:both;
 
 	}
 
