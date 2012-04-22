@@ -145,7 +145,7 @@ var Exo = (function (obj) {
 			_this.updateAPILink();
 
 			// get the url string...
-			var base_url = "http://174.122.110.37:12001/api/planets";
+			var base_url = "http://exoapi.com/api/planets";
 			var url = base_url + $("#url_spot").val();
 
 			var response = "Requesting: " + url + "\n" + "----------------------------------------------------------------------------\n"
