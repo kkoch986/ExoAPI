@@ -249,8 +249,14 @@ function isEmpty(map) {
    return true;
 }
 
+
+function is_number(input){
+	return typeof(input)=='number'&&parseFloat(input)==input;
+}
+
 function getValue(v)
 {
+	if(is_number(v)) return v + "";
 	return (isEmpty(v) ? "N/A" : v.toString());
 }
 
