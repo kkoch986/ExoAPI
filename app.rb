@@ -26,15 +26,19 @@ get '/api/planets/search' do
 	params.keys.each do |p|
 		if(p != "fields" && p != "sort" && p != "limit" && p != "start") 
 			# look at the key and see if it contains a range symbol
-			if(p.split(":").count == 1)
-				search_p[p] = params[p]
+			if(p.split(":").count == 1)			
+					search_p[p] = Float(params[p]) rescue search_p[p] = params[p]
 			else
 				# split the operator and field name
 				parts = p.split(":")
 				field = parts[0]
 				operator = parts[1]
 
-				search_p[field] = {"$" + operator => params[p]}
+				if(Float(params[p]))
+					search_p[field] = {"$" + operator => Float(params[p])}
+				else
+					search_p[field] = {"$" + operator => params[p]}
+				end
 			end
 		end
 	end
