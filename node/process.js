@@ -3,11 +3,13 @@ var libxmljs = require("libxmljs");
 
 /* Connect to Mongo */
 var mongodb = require("mongodb"),
-	mongoserver = new mongodb.Server("localhost", 27017),
+	mongoserver = new mongodb.Server("174.122.110.37", 12002),
 	db_connector = new mongodb.Db("test", mongoserver);
 
 var UPDATE_FREQ = 60000; // one minute ?
 
+
+db_connector.open(openCollection);
 
 setInterval(function(){
 	db_connector.open(openCollection);
@@ -33,7 +35,7 @@ function startParsing(err, collection)
 	var x = 0;
 	for( ; x < files.length ; x++)
 	{
-		var text = fs.readFileSync("../../data/data/" + files[x], "UTF-8");
+		var text = fs.readFileSync("../exo_data/data/" + files[x], "UTF-8");
 		var xml = libxmljs.parseXmlString(text);
 		
 		var id = xml.get("//id").text();
