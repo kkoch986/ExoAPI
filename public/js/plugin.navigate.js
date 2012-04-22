@@ -42,7 +42,7 @@
 			animDistance = pageWidth * target;
 
 			resizeWrapper(target);
-			 $('body').animate({scrollTop : 0},'slow');
+			$('body').animate({scrollTop : 0},'slow');
 			$('ul.slides').animate({left: - animDistance},function() {
 				$('.arrows').fadeTo(200, 1);
 				pageIdx = target;
@@ -53,7 +53,7 @@
 	}
 
 	function slideRight(target) {
-		if(pageIdx < numPages) {
+		if(pageIdx < (numPages -1)) {
 			slideToSlide(pageIdx + 1);
 		}
 	}
@@ -69,17 +69,17 @@
 *  BIND LISTENERS
 */	
 
-	$('li.demo').click(function(e) {
+	$('li.demo-link').click(function(e) {
 		e.preventDefault();
 		slideToSlide(0);
 	});
 
-	$('li.docs').click(function(e) {
+	$('li.docs-link').click(function(e) {
 		e.preventDefault();
 		slideToSlide(1);
 	});
 
-	$('li.interact').click(function(e) {
+	$('li.interact-link').click(function(e) {
 		e.preventDefault();
 		slideToSlide(2);
 	});
