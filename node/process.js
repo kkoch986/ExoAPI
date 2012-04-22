@@ -1,13 +1,20 @@
+var terminal = require('child_process').spawn('cmd');
 var fs = require('fs');
 var libxmljs = require("libxmljs");
 
+terminal.stdout.on('cd ../exo_data && git pull', function (data) {
+    console.log('stdout: ' + data);
+});
+
 /* Connect to Mongo */
 var mongodb = require("mongodb"),
-	mongoserver = new mongodb.Server("localhost", 27017),
+	mongoserver = new mongodb.Server("174.122.110.37", 12002),
 	db_connector = new mongodb.Db("test", mongoserver);
 
 var UPDATE_FREQ = 60000; // one minute ?
 
+
+db_connector.open(openCollection);
 
 setInterval(function(){
 	db_connector.open(openCollection);
@@ -26,14 +33,14 @@ function startParsing(err, collection)
 		console.log(err);
 
 	/* Start by loading a list of all Planets in The /data folder. */
-	var files = fs.readdirSync("../exo_data/data");
+	var files = fs.readdirSync("../exo_data/data/data");
 	//console.log(files);
 
 	console.log("[" + new Date() + "] Begin Update");
 	var x = 0;
 	for( ; x < files.length ; x++)
 	{
-		var text = fs.readFileSync("../../data/data/" + files[x], "UTF-8");
+		var text = fs.readFileSync("../exo_data/data/data/" + files[x], "UTF-8");
 		var xml = libxmljs.parseXmlString(text);
 		
 		var id = xml.get("//id").text();
