@@ -34,8 +34,10 @@ var Exo = (function (obj) {
 		});
 
 		$('.roll-trigger').mouseleave(function() {
+			myScope = $(this);
 			$(this).find('div.back-anim').stop(true, true).animate({width:'0px'}, 600, 
 				function() {
+					$(myScope).find("h3").css({color:'#787070'});
 					$(this).hide();
 
 			});
