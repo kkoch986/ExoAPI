@@ -120,7 +120,12 @@ get '/' do
 	erb :index
 end
 
+<<<<<<< HEAD
 
 get '/interactive' do 
 	erb :interactive
+=======
+get '/api_demo' do 
+	erb :api_demo
+>>>>>>> 2cb6376c0d410cfc0901193074215c3873092a71
 end

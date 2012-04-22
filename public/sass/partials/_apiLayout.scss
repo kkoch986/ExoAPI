@@ -1,0 +1,37 @@
+#api-tags{
+	@include horizontal-list;
+
+	li{
+		padding:5px;
+		background:$white;
+		margin:3px;
+
+		@include transition-property(opacity);
+  		@include transition-duration(2s);
+
+		&.selected{
+			color:$blue;
+
+			&:before{
+				content:"x ";
+				color:$badass;
+				font-size:-5;
+			}
+		}
+		&.deselected{
+			color:$ltgrey;
+			@include opacity(.5);
+
+			&:before{
+				content:"+ ";
+			}
+		}
+
+		&:hover{
+			@include opacity(1);
+		}
+
+
+	}
+
+}

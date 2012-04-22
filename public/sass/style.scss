@@ -13,10 +13,7 @@ body{
 }
 
 a.logo {
-	width:192px;
-	height:116px;
-	background:url('/images/logo.jpg') top left;
-	display:block;
+	@include replace-text-with-dimensions('logo.jpg');
 	position:fixed;
 	top:36px;
 	left:50%;
