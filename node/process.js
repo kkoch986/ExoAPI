@@ -26,7 +26,7 @@ function startParsing(err, collection)
 		console.log(err);
 
 	/* Start by loading a list of all Planets in The /data folder. */
-	var files = fs.readdirSync("../../data/data/");
+	var files = fs.readdirSync("../exo_data/data");
 	//console.log(files);
 
 	console.log("[" + new Date() + "] Begin Update");
