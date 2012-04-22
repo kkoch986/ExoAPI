@@ -4,7 +4,7 @@ require 'json/pure'
 require 'mongo'
 include Mongo
 
-db = Connection.new("exoapi.com").db('test')
+db = Connection.new("exoapi.com", "12002").db('test')
 #db = Connection.new("172.16.3.30","27017").db('test')
 
 ###############################################################################################################
