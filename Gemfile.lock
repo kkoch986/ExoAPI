@@ -1,8 +1,6 @@
 GEM
   specs:
     bson (1.6.2)
-    bson_ext (1.6.2)
-      bson (~> 1.6.2)
     json_pure (1.6.6)
     mongo (1.6.2)
       bson (~> 1.6.2)
@@ -21,8 +19,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
   json_pure
-  mongo
   mongodb
   sinatra
