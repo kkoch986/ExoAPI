@@ -40,7 +40,7 @@ function startParsing(err, collection)
 	var x = 0;
 	for( ; x < files.length ; x++)
 	{
-		var text = fs.readFileSync("../exo_data/data/" + files[x], "UTF-8");
+		var text = fs.readFileSync("../exo_data/data/data/" + files[x], "UTF-8");
 		var xml = libxmljs.parseXmlString(text);
 		
 		var id = xml.get("//id").text();
