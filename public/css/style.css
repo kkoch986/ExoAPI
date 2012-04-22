@@ -69,19 +69,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Colors
 ------------------------------------------------------------ */
+/* Font Sizes
+------------------------------------------------------------ */
 /* line 3, ../sass/partials/_animation.scss */
 .sub-link {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
   padding-top: 3px;
-  -webkit-perspective: 400px;
-  -moz-perspective: 400px;
-  -o-perspective: 400px;
+  -webkit-transition-property: perspective;
+  -moz-transition-property: perspective;
+  -ms-transition-property: perspective;
+  -o-transition-property: perspective;
+  transition-property: perspective;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -ms-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
   perspective: 400px;
 }
-
-/* line 13, ../sass/partials/_animation.scss */
+/* line 14, ../sass/partials/_animation.scss */
 .sub-link span {
   height: 45px;
   display: block;
@@ -102,17 +110,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-
 /* line 34, ../sass/partials/_animation.scss */
-.sub-link:hover span {
-  background: #ccc;
-  -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
-  -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
-  -o-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
-  transform: translate3d(0px, 0px, -30px) rotateX(90deg);
-}
-
-/* line 41, ../sass/partials/_animation.scss */
 .sub-link span:after {
   padding-top: 3px;
   height: 45px;
@@ -133,6 +131,94 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
   transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
 }
+/* line 56, ../sass/partials/_animation.scss */
+.sub-link:hover span {
+  background: #ccc;
+  -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -o-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+/* line 67, ../sass/partials/_animation.scss */
+.selected, .deselected {
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transition-property: perspective;
+  -moz-transition-property: perspective;
+  -ms-transition-property: perspective;
+  -o-transition-property: perspective;
+  transition-property: perspective;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -ms-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+  perspective: 400px;
+}
+/* line 76, ../sass/partials/_animation.scss */
+.selected span, .deselected span {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 5px;
+  color: #1b1818;
+  background: white;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 96, ../sass/partials/_animation.scss */
+.selected span:after, .deselected span:after {
+  width: 100%;
+  content: "x remove";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  color: white;
+  background: #269bdf;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -moz-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -o-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+}
+/* line 117, ../sass/partials/_animation.scss */
+.selected:hover span, .deselected:hover span {
+  background: white;
+  -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  -o-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+/* line 129, ../sass/partials/_animation.scss */
+.deselected span {
+  color: #453e3e;
+  background: #787070;
+}
+/* line 133, ../sass/partials/_animation.scss */
+.deselected span:after {
+  content: "+ add";
+}
+/* line 138, ../sass/partials/_animation.scss */
+.deselected:hover span {
+  background: white;
+}
 
 /* line 1, ../sass/partials/_apiLayout.scss */
 #api-tags {
@@ -141,18 +227,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border: 0;
   overflow: hidden;
   *zoom: 1;
+  margin-left: -3px;
 }
+<<<<<<< HEAD
 /* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+=======
+/* line 49, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_inline-block-list.scss */
+>>>>>>> d40460e36bc6d7cab63ec678942dfc3c269e4b68
 #api-tags li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
   white-space: nowrap;
-  display: inline;
-  float: left;
-  padding-left: 4px;
-  padding-right: 4px;
 }
+<<<<<<< HEAD
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li:first-child, #api-tags li.first {
   padding-left: 0;
@@ -164,47 +257,119 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 50, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #api-tags li.last {
   padding-right: 0;
-}
-/* line 4, ../sass/partials/_apiLayout.scss */
+=======
+/* line 7, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #api-tags li {
-  padding: 5px;
-  background: white;
+  *display: inline;
+}
+/* line 5, ../sass/partials/_apiLayout.scss */
+#api-tags li {
   margin: 3px;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -ms-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 2s;
-  -moz-transition-duration: 2s;
-  -ms-transition-duration: 2s;
-  -o-transition-duration: 2s;
-  transition-duration: 2s;
+  cursor: pointer;
+  font-size: 12px;
 }
-/* line 12, ../sass/partials/_apiLayout.scss */
-#api-tags li.selected {
-  color: #269bdf;
-}
+
 /* line 15, ../sass/partials/_apiLayout.scss */
-#api-tags li.selected:before {
-  content: "x ";
-  color: #bada55;
-  font-size: -5;
+.api-form {
+  color: white;
 }
-/* line 21, ../sass/partials/_apiLayout.scss */
-#api-tags li.deselected {
-  color: #787070;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
+/* line 18, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form label {
+  font-weight: bold;
 }
-/* line 25, ../sass/partials/_apiLayout.scss */
-#api-tags li.deselected:before {
-  content: "+ ";
+/* line 19, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+>>>>>>> d40460e36bc6d7cab63ec678942dfc3c269e4b68
 }
-/* line 30, ../sass/partials/_apiLayout.scss */
-#api-tags li:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form legend {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password] {
+  margin: 0.5em 0;
+  background-color: white;
+  padding: 5px;
+}
+/* line 27, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.title {
+  font-size: 1.5em;
+}
+/* line 29, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form textarea {
+  margin: 0.5em 0;
+  padding: 5px;
+}
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form select {
+  margin: 0.5em 0;
+}
+/* line 55, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form fieldset {
+  border: 1px solid #cccccc;
+}
+/* line 58, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password],
+.api-form form textarea {
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+}
+/* line 61, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text:focus, .api-form form input.title:focus, .api-form form input[type=email]:focus, .api-form form input[type=text]:focus, .api-form form input[type=password]:focus,
+.api-form form textarea:focus {
+  border-color: #666666;
+}
+/* line 65, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form select {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+/* line 44, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password] {
+  width: 300px;
+}
+/* line 46, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form textarea {
+  width: 390px;
+  height: 250px;
+}
+/* line 44, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form input.text, .api-form form input.title, .api-form form input[type=email], .api-form form input[type=text], .api-form form input[type=password] {
+  width: 100%;
+}
+/* line 46, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.api-form form textarea {
+  width: 100%;
+  height: 250px;
+}
+/* line 22, ../sass/partials/_apiLayout.scss */
+.api-form form input {
+  padding: 5px;
+}
+/* line 26, ../sass/partials/_apiLayout.scss */
+.api-form form textarea {
+  height: 100px;
+}
+/* line 31, ../sass/partials/_apiLayout.scss */
+.api-form .search-on input[type=text] {
+  width: 300px;
+}
+/* line 36, ../sass/partials/_apiLayout.scss */
+.api-form .limit-opts .add, .api-form .limit-opts .subtract, .api-form .start-opts .add, .api-form .start-opts .subtract {
+  display: inline-block;
+  background: white;
+  color: #453e3e;
+  cursor: pointer;
+  width: 15px;
+  text-align: center;
+}
+/* line 45, ../sass/partials/_apiLayout.scss */
+.api-form .limit-opts input[type=text], .api-form .start-opts input[type=text] {
+  width: 30px;
 }
 
 /* line 9, ../sass/style.scss */
