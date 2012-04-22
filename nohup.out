@@ -1,0 +1,15 @@
+
+node.js:201
+        throw e; // process.nextTick error, or 'error' event on first tick
+              ^
+Error: ENOENT, no such file or directory '../../data/data/'
+    at Object.readdirSync (fs.js:390:18)
+    at startParsing (/Users/kenkoch/exoapi/app/node/process.js:29:17)
+    at Db.collection (/Users/kenkoch/exoapi/app/node/node_modules/mongodb/lib/mongodb/db.js:449:44)
+    at openCollection (/Users/kenkoch/exoapi/app/node/process.js:19:5)
+    at /Users/kenkoch/exoapi/app/node/node_modules/mongodb/lib/mongodb/db.js:258:14
+    at [object Object].<anonymous> (/Users/kenkoch/exoapi/app/node/node_modules/mongodb/lib/mongodb/connection/server.js:229:7)
+    at [object Object].g (events.js:156:14)
+    at [object Object].emit (events.js:88:20)
+    at Db._callHandler (/Users/kenkoch/exoapi/app/node/node_modules/mongodb/lib/mongodb/db.js:1292:25)
+    at /Users/kenkoch/exoapi/app/node/node_modules/mongodb/lib/mongodb/connection/server.js:352:30

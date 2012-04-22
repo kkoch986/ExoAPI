@@ -21,7 +21,7 @@ get '/api/planets/search' do
 
 	search_p = {}
 	params.keys.each do |p|
-		if(p != "fields" && p != "sort") 
+		if(p != "fields" && p != "sort" && p != "limit" && p != "start") 
 			# look at the key and see if it contains a range symbol
 			if(p.split(":").count == 1)
 				search_p[p] = params[p]
@@ -37,6 +37,15 @@ get '/api/planets/search' do
 	end
 
 	planets = collection.find(search_p, opts).sort(sort)
+
+	if(!params[:limit].nil?)
+		planets.limit(params[:limit].to_i)
+	end
+
+	if(!params[:start].nil?)
+		planets.skip(Integer(params[:start].to_i))
+	end
+
 	return_response(planets.to_a)
 end
 
@@ -109,4 +118,9 @@ end
 ###############################################################################################################
 get '/' do 
 	erb :index
+end
+
+
+get '/interactive' do 
+	erb :interactive
 end

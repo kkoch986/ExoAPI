@@ -6,7 +6,12 @@ var mongodb = require("mongodb"),
 	mongoserver = new mongodb.Server("localhost", 27017),
 	db_connector = new mongodb.Db("test", mongoserver);
 
-db_connector.open(openCollection);
+var UPDATE_FREQ = 60000; // one minute ?
+
+
+setInterval(function(){
+	db_connector.open(openCollection);
+}, UPDATE_FREQ);
 
 
 function openCollection(err, db)
@@ -24,7 +29,7 @@ function startParsing(err, collection)
 	var files = fs.readdirSync("../../data/data/");
 	//console.log(files);
 
-	console.log("Begin Update");
+	console.log("[" + new Date() + "] Begin Update");
 	var x = 0;
 	for( ; x < files.length ; x++)
 	{
@@ -38,7 +43,8 @@ function startParsing(err, collection)
 
 		collection.save(object);
 	}
-	console.log("Complete Update ("+x+") Records Processed");
+	console.log("[" + new Date() + "] Complete Update ("+x+") Records Processed");
+	db_connector.close();
 }
 
 
