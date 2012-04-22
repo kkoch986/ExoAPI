@@ -28,10 +28,8 @@ var Exo = (function (obj) {
 		});
 
 		$('.roll-trigger').mouseleave(function() {
-			myScope = $(this);
 			$(this).find('div.back-anim').stop(true, true).animate({width:'0px'}, 600, 
 				function() {
-					$(myScope).find('h3').css({color: '#787070'});
 					$(this).hide();
 
 			});
@@ -97,8 +95,9 @@ var Exo = (function (obj) {
 			var num = Number($this.siblings('.to-increment').html());
 			if( num > 0){
 				num--;
-				$this.siblings('.to-increment').html(num);
-			}
+			$this.siblings('.to-increment').val(num);
+			_this.updateAPILink();	
+		});
 
 
 		});	
