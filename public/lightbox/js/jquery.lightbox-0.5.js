@@ -21,17 +21,20 @@
 	$.fn.lightBox = function(settings) {
 		// Settings to configure the jQuery lightBox plugin how you like
 		settings = jQuery.extend({
+			maxWidth: null,
+        	maxHeight: null,
+
 			// Configuration related to overlay
 			overlayBgColor: 		'#000',		// (string) Background color to overlay; inform a hexadecimal value like: #RRGGBB. Where RR, GG, and BB are the hexadecimal values for the red, green, and blue values of the color.
 			overlayOpacity:			0.8,		// (integer) Opacity value to overlay; inform: 0.X. Where X are number from 0 to 9
 			// Configuration related to navigation
 			fixedNavigation:		false,		// (boolean) Boolean that informs if the navigation (next and prev button) will be fixed or not in the interface.
 			// Configuration related to images
-			imageLoading:			'images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
-			imageBtnPrev:			'images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
-			imageBtnNext:			'images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
-			imageBtnClose:			'images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
-			imageBlank:				'images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
+			imageLoading:			'/lightbox/images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
+			imageBtnPrev:			'/lightbox/images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
+			imageBtnNext:			'/lightbox/images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
+			imageBtnClose:			'/lightbox/images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
+			imageBlank:				'/lightbox/images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
 			// Configuration related to container image box
 			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
 			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.
@@ -200,6 +203,16 @@
 		 * @param integer intImageHeight The image´s height that will be showed
 		 */
 		function _resize_container_image_box(intImageWidth,intImageHeight) {
+			//rescale if necessary
+	        if((settings.maxWidth != null && settings.maxHeight != null) && (intImageWidth > settings.maxWidth || intImageHeight > settings.maxHeight)){
+		    var isWider = intImageWidth > intImageHeight;//is the image wide or tall?
+		    var scale = isWider ?  settings.maxWidth/intImageWidth : settings.maxHeight/intImageHeight;
+		    intImageWidth = intImageWidth * scale;
+		    intImageHeight = intImageHeight * scale;
+	         }
+
+         $('#lightbox-image').height(intImageHeight);
+         $('#lightbox-image').width(intImageWidth);
 			// Get current width and height
 			var intCurrentWidth = $('#lightbox-container-image-box').width();
 			var intCurrentHeight = $('#lightbox-container-image-box').height();

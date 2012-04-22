@@ -20,7 +20,7 @@
 	var pageNames = new Array();
 	pageNames[0] = "Demo ///";
 	pageNames[1] = "Docs ///";
-	pageNames[3] = "About ///";
+	pageNames[2] = "About ///";
 	pageNames[3] = "Interact ///";
 
 
@@ -117,7 +117,7 @@
 
 	$('li.docs-link').click(function(e) {
 		e.preventDefault();
-		slideToSlide(3);
+		slideToSlide(1);
 	});
 
 	$('li.interact-link').click(function(e) {
@@ -127,7 +127,7 @@
 
 	$('a.docs-page').click(function(e) {
 		e.preventDefault();
-		slideToSlide(3);
+		slideToSlide(1);
 	});
 
 	$('li.about-link').click(function(e) {
