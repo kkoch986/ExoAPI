@@ -334,7 +334,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 26, ../sass/partials/_apiLayout.scss */
 .api-form form textarea {
-  height: 100px;
+  height: 300px;
 }
 /* line 31, ../sass/partials/_apiLayout.scss */
 .api-form .search-on input[type=text] {
@@ -379,10 +379,15 @@ a.logo {
   position: fixed;
   top: 36px;
   left: 50%;
-  margin-left: -464px;
+  margin-left: -475px;
 }
 
 /* line 25, ../sass/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 29, ../sass/style.scss */
 a.arrow-rt {
   height: 77px;
   width: 46px;
@@ -397,55 +402,92 @@ a.arrow-rt {
   margin-top: -39px;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
+a.arrow-lt {
+  height: 77px;
+  width: 46px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -470px;
+  background: url("/images/arrow-lt.jpg") no-repeat;
+  background-position: 0 0;
+  overflow: hidden;
+  display: block;
+  margin-top: -39px;
+}
+
+/* line 57, ../sass/style.scss */
 a.arrow-rt:hover {
   background-position: 0 -77px;
 }
 
-/* line 43, ../sass/style.scss */
-#page-holder {
-  height: 30px;
-  width: 100px;
-  position: fixed;
-  top: 124px;
-  left: 50%;
-  margin-left: -270px;
+/* line 61, ../sass/style.scss */
+a.arrow-lt:hover {
+  background-position: 0 -77px;
 }
-/* line 51, ../sass/style.scss */
+
+/* line 65, ../sass/style.scss */
+#page-holder {
+  height: 50px;
+  width: 150px;
+  position: fixed;
+  text-align: right;
+  top: 222px;
+  left: 50%;
+  margin-left: -440px;
+}
+/* line 74, ../sass/style.scss */
 #page-holder a.page-title:link, #page-holder a.page-title:active, #page-holder a.page-title:visited, #page-holder a.page-title:hover {
   color: #453e3e;
-  font-size: 26px;
+  font-size: 28px;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
+#descrip {
+  width: 190px;
+  position: fixed;
+  left: 50%;
+  top: 300px;
+  margin-left: -470px;
+  text-align: right;
+}
+/* line 91, ../sass/style.scss */
+#descrip p {
+  font-size: 13px;
+  line-height: 17px;
+  color: #FFF;
+}
+
+/* line 98, ../sass/style.scss */
 #main-content {
   width: 651px;
   margin: 0 auto;
   padding-left: 325px;
 }
-/* line 65, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 #main-content #sub-nav {
   width: 651px;
   height: 28px;
   border-top: 1px solid #453e3e;
   margin-top: 130px;
 }
-/* line 71, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 #main-content #sub-nav ul.subnav {
   float: right;
   height: 20px;
   float: right;
   padding-top: 8px;
 }
-/* line 77, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li {
   height: 20px;
   float: right;
   margin-left: 12px;
 }
-/* line 82, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li a.sub-link:link, #main-content #sub-nav ul.subnav li a.sub-link:active, #main-content #sub-nav ul.subnav li a.sub-link:visited {
   font-family: arial, helvetica, san-serif;
   font-size: 14px;
@@ -453,27 +495,36 @@ a.arrow-rt:hover {
   text-decoration: none;
   font-weight: bold;
 }
-/* line 89, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 #main-content #sub-nav ul.subnav li a.sub-link:link:hover, #main-content #sub-nav ul.subnav li a.sub-link:active:hover, #main-content #sub-nav ul.subnav li a.sub-link:visited:hover {
   color: #269bdf;
 }
-/* line 97, ../sass/style.scss */
-#main-content ul.slides {
+/* line 135, ../sass/style.scss */
+#main-content #overflow {
   width: 651px;
-  height: 900px;
+  overflow: hidden;
 }
-/* line 102, ../sass/style.scss */
-#main-content ul.slides li.slide {
-  width: 651px;
-  height: 900px;
-}
-/* line 107, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets {
-  width: 360px;
+/* line 140, ../sass/style.scss */
+#main-content #overflow ul.slides {
+  width: 3051px;
+  /*height: 900px;*/
+  position: relative;
+  left: 0px;
   margin-top: 60px;
+  overflow: hidden;
 }
-/* line 111, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li {
+/* line 149, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide {
+  width: 651px;
+  float: left;
+  color: #FFF;
+}
+/* line 157, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets {
+  width: 360px;
+}
+/* line 160, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li {
   width: 360px;
   height: 45px;
   position: relative;
@@ -481,25 +532,25 @@ a.arrow-rt:hover {
   margin-bottom: 25px;
   overflow: hidden;
 }
-/* line 120, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li .roll-trigger {
+/* line 169, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li .roll-trigger {
   width: 360px;
   height: 45px;
   position: relative;
   top: 0px;
 }
-/* line 126, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li .roll-trigger a.close-button {
+/* line 175, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li .roll-trigger a.close-button {
   height: 20px;
   width: 18px;
   background: url("/images/close_button.png") top left no-repeat;
   position: absolute;
   top: 8px;
-  right: 10px;
+  right: 0px;
   display: none;
 }
-/* line 137, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.back-anim {
+/* line 186, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.back-anim {
   width: 0px;
   display: none;
   height: 45px;
@@ -508,47 +559,47 @@ a.arrow-rt:hover {
   top: 0px;
   left: 0px;
 }
-/* line 147, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.info {
+/* line 196, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.info {
   width: 360px;
   height: 45px;
   position: absolute;
   top: 0px;
   left: 0px;
 }
-/* line 154, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.info a.filler {
+/* line 203, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.info a.filler {
   height: 45px;
   width: 360px;
   text-decoration: none;
 }
-/* line 160, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.info h2 {
+/* line 209, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.info h2 {
   font-family: arial, helvetica, san-serif;
   font-size: 30px;
   font-weight: bold;
   color: #FFF;
 }
-/* line 167, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.info h3 {
+/* line 216, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.info h3 {
   font-family: arial, helvetica, san-serif;
   font-size: 11px;
   font-weight: bold;
   color: #787070;
 }
-/* line 176, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded {
+/* line 225, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded {
   height: 720px;
   width: 360px;
   background: #000;
   position: relative;
 }
-/* line 184, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded div.image-holder {
+/* line 233, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded div.image-holder {
   position: relative;
 }
-/* line 187, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded div.image-holder a.expand-image {
+/* line 236, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded div.image-holder a.expand-image {
   position: absolute;
   height: 31px;
   width: 31px;
@@ -558,15 +609,15 @@ a.arrow-rt:hover {
   bottom: 0px;
   display: none;
 }
-/* line 201, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded ul.info {
+/* line 250, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info {
   width: 340px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
 }
-/* line 207, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded ul.info li {
+/* line 256, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li {
   font-size: 12px;
   width: auto;
   height: auto;
@@ -574,20 +625,45 @@ a.arrow-rt:hover {
   margin-bottom: 7px;
   color: #FFF;
 }
-/* line 215, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded ul.info li ul {
+/* line 264, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li ul {
   padding-left: 20px;
   padding-top: 5px;
 }
-/* line 220, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded ul.info li strong {
+/* line 269, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li strong {
   font-weight: bold;
   color: #787070;
 }
-/* line 225, ../sass/style.scss */
-#main-content ul.slides li.slide ul.planets li div.expanded ul.info li h3 {
+/* line 274, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide ul.planets li div.expanded ul.info li h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #787070;
+}
+/* line 291, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide #docs {
+  width: 460px;
+}
+/* line 294, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide #docs h2 {
+  font-family: arial, helvetica, san-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFF;
+  margin-bottom: 10px;
+}
+/* line 302, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide #docs p {
+  font-family: arial, helvetica, san-serif;
+  font-size: 14px;
+  line-height: 19px;
+  color: #787070;
+  margin-bottom: 20px;
+}
+/* line 309, ../sass/style.scss */
+#main-content #overflow ul.slides li.slide #docs p .code {
+  font-weight: bold;
+  color: #FFF;
 }

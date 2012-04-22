@@ -15,26 +15,124 @@
 	<!--BEGIN SUB NAV LINKS-->
 	<div id="sub-nav">
 		<ul class="subnav">
-			<li><a href="#" class="sub-link"><span data-title="INTERACT">INTERACT</span></a></li>
-			<li><a href="#" class="sub-link"><span data-title="DOCS">DOCS</span></a></li>
-			<li><a href="#" class="sub-link"><span data-title="DEMO">DEMO</span></a></li>		
+			<li class="interact"><a href="#" class="sub-link" onclick="return false;"><span data-title="INTERACT">INTERACT</span></a></li>
+			<li class="docs"><a href="#" class="sub-link" onclick="return false;"><span data-title="DOCS">DOCS</span></a></li>
+			<li class="demo"><a href="#" class="sub-link" onclick="return false;"><span data-title="DEMO">DEMO</span></a></li>		
 		</ul>
 	</div>
 	<!--END SUB NAV LINKS-->
-	<ul class="slides">
-		<li class="slide demo">
-			<ul class="planets">
-			</ul>
-		</li>
-	</ul>
+	<div id="overflow">
+		<ul class="slides">
+			<li class="slide demo">
+				<div class="slide-hide">
+					<ul class="planets">
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li class="slide">
+				<div class="slide-hide">
+					<div id="docs">
+						<h2>Get Planets</h2>
+						<p>You can request all of the current ExoPlanetary data using /planets/all. These queries can also be modified by the sort and fields operators.</p>
+						<p>All Planets <span class="code">/planets/all</a></p>
+						<p>Planets By Id <span class="code">/planets/[id]</a></p>
+
+						<h2>Search Planets</h2>
+
+						<p>You can search planets using the fieldname=value parameters on /planets/search? These queries can also be modified using the sort and fields operators.</p>
+
+						<p>For instance to find all planets discovered in 2012:<br /><span class="code">/planets/search?discoveryyear=2012</span></p>
+
+						<p>You can also use :gt, :gte, :lt, :lte to execute range style queries. for example to find all planets discovered before 2007:<br /><span class="code">/planets/search?discoveryyear:lt=2007</span></p>
+
+						<h2>Sorting Results</h2>
+
+						<p>Results can be sorted using the sort parameter:<br /><span class="code">/planets/all?sort=[field[:asc|:desc]]</span></p>
+
+						<p>For example, to sort all planets by mass, descending:<br /><span class="code">/planets/all?sort=[properties.mass:desc]</span></p>
+
+						<p>If no directionality is specified, ascending is used for example you can sort the planets by mass asc simply by using:<br /><span class="code">/planets/all?sort=[properties.mass]</span></p>
+	
+
+						<p>You can also use multiple sorting parameters by using comma as a delimiter:<br /><span class="code">/planets/all?sort=[discoveryyear:desc,name]</p>
+
+						<p>Note: Not all planets have values for all fields. Currently in the API null values are returned as the greatest value. So a desc sort may return some results with null values for that field as the first several entries.</p>
+
+						<h2>Selecting Specific Fields</h2>
+
+						<p>If you do not want the full output with all planetary information, you can select specific fields that should be returned by the API, for example, to select only the names of planets use:<br /><span class="code">/planets/all?fields=[name]</span></p>
+
+						<p>Note: The _id field is returned in all queries, the above query would return {name, _id} fields for each entry in the API</p>
+
+						<p>Fields should be separated by a comma, to select name and mass from planets with mass > 5, ordered by mass use the following search query:<br /><span class="code">/planets/search?properties.mass:gte=5&amp;fields=[name,properties.mass]&sort=[properties.mass]</span><p/>
+
+						<h2>Current Field List:</h2>
+
+						<p>This is the current list of fields in the database. Note this document may go out of date and more fields may be available (or unavailable if removed). For more information on the format of the underlying data, see here <span class="code">(https://github.com/hannorein/open_exoplanet_catalogue/tree/master/data).</span></p>
+						<p>
+						id_exoplaneteu<br />
+						name<br />
+						id<br />
+						discoverymethod<br />
+						properties ( set )<br />
+						properties.mass<br />
+						properties.orbit ( set )<br />
+						properties.orbit.period<br />
+						properties.orbit.semimajoraxis<br />
+						properties.orbit.eccentricity<br />
+						properties.orbit.incliniation<br />
+						star ( set )<br />
+						star.spectraltype<br />
+						star.mass<br />
+						star.radius<br />
+						star.metallicity<br />
+						star.rightascension<br />
+						star.declination<br />
+						star.angulardistance<br />
+						star.distance<br />
+						star.magV<br />
+						star.magI<br />
+						star.magH<br />
+						star.magJ<br />
+						star.magK<br />
+						multiplicity<br />
+						discoveryyear<br />
+						lastupdate<br />
+						description<br />
+						new<br />
+						image<br />
+						imagedescription<br />
+					</p>
+
+
+
+	
+
+	
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li class="slide">
+				<div class="slide-hide">
+					slide 3
+				</div>
+				<div class="clear"></div>
+			</li>
+		</ul>
+	</div>
 </div>	
 <a class="logo"></a>
-<a href="#" class="arrow-rt"></a>
+<a href="#" class="arrow-rt arrows"></a>
+<a href="#" class="arrow-lt arrows"></a>
 <div id="page-holder"><a href="#" class="page-title">Demo ///</a></div>
+<!--<div id="descrip"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum tempus purus sed aliquet. Nulla facilisi. Morbi vitae nulla vel tellus dignissim fringilla. Morbi vel lorem vitae sapien hendrerit tempus. Curabitur feugiat hendrerit diam, vel eleifend turpis pretium id.</p></div>-->
 
 <script src="/js/jquery-1.7.2.min.js"></script>
 <script src="/js/jquery.easing.1.3.js"></script>
 <script src="/js/plugin.expander.js"></script>
+<script src="/js/plugin.navigate.js"></script>
 <script src="/js/app.js"></script>
 <script src="/lightbox/js/jquery.lightbox-0.5.min.js"></script>
 
@@ -46,7 +144,7 @@ $(document).ready(function() {
 	// send a post request to the API to get the list of planets
   	$.ajax( 
   	{
-  		url: "http://172.16.3.30:4567/api/planets/all?limit=50&sort=[discoveryyear:desc]",
+  		url: "http://172.16.3.30:4567/api/planets/all?limit=30&sort=[discoveryyear:desc]",
   		success: function(data)
   		{
   			var d = data.response.results;
@@ -127,7 +225,7 @@ $(document).ready(function() {
 
 					text += '</div>';
 
-  				text += "</li>";
+  				text += "</li><div class='clear'></div>";
 
   				$("ul.planets").append(text);
   			}
@@ -140,6 +238,7 @@ $(document).ready(function() {
 	Exo.initGlobalApp();
 	$('ul.planets').expander();
 	$('a.expand-image').lightBox();
+	$('body').navigate();
 });
 
 function isEmpty(map) {

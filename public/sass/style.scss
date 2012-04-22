@@ -19,7 +19,11 @@ a.logo {
 	position:fixed;
 	top:36px;
 	left:50%;
-	margin-left:-464px;
+	margin-left:-475px;
+}
+
+.clear {
+	clear:both;
 }
 
 a.arrow-rt {
@@ -36,24 +40,58 @@ a.arrow-rt {
 	margin-top:-39px;
 }
 
+a.arrow-lt {
+	height:77px;
+	width:46px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-left:-470px;
+	background: url('/images/arrow-lt.jpg') no-repeat;
+	background-position: 0 0;
+	overflow:hidden;
+	display:block;
+	margin-top:-39px;
+}
+
 a.arrow-rt:hover {
 	background-position: 0 -77px;
 }
 
+a.arrow-lt:hover {
+	background-position: 0 -77px;
+}
+
 #page-holder {
-	height:30px;
-	width:100px;
+	height:50px;
+	width:150px;
 	position:fixed;
-	top:124px;
+	text-align:right;
+	top:222px;
 	left:50%;
-	margin-left:-270px;
+	margin-left:-440px;
 
 	a.page-title:link, a.page-title:active, a.page-title:visited, a.page-title:hover {
 		color:$charcoal;
-		font-size:26px;
+		font-size:28px;
 		text-decoration:none;
 		font-weight:bold;
 
+	}
+}
+
+#descrip {
+	width:190px;
+	position:fixed;
+	left:50%;
+	top:300px;
+	margin-left:-470px;
+	text-align:right;
+
+	p {
+		font-size:13px;
+		line-height:17px;
+		color:#FFF;
 	}
 }
 
@@ -94,149 +132,188 @@ a.arrow-rt:hover {
 		}
 	}
 
-	ul.slides {
+	#overflow {
 		width:651px;
-			height: 900px;
+		overflow:hidden;
+	
+
+		ul.slides {
+			width:3051px;
+			/*height: 900px;*/
+			position:relative;
+			left:0px;
+			margin-top:60px;
+			overflow:hidden;
 
 
-		li.slide {
+			li.slide {
 
-			width:651px;
-			height: 900px;
+				width:651px;
+				float:left;
+				color:#FFF;
+				
 
-			ul.planets {
-				width:360px;
-				margin-top:60px;
 
-				li{
+				ul.planets {
 					width:360px;
-					height: 45px;
-					position:relative;
-					float:left;
-					margin-bottom:25px;
-					overflow:hidden;
 
-
-					.roll-trigger {
+					li{
 						width:360px;
 						height: 45px;
 						position:relative;
-						top:0px;
+						float:left;
+						margin-bottom:25px;
+						overflow:hidden;
 
-							a.close-button {
-								height:20px;
-								width:18px;
-								background: url('/images/close_button.png') top left no-repeat;
-								position:absolute;
-								top:8px;
-								right:10px;
-								display:none;
-							}
-					}
 
-					div.back-anim {
-						width:0px;
-						display:none;
-						height:45px;
-						background-color:$blue;
-						position:absolute;
-						top:0px;
-						left:0px;
-					}
-
-					div.info {
-						width:360px;
-						height:45px;
-						position:absolute;
-						top:0px;
-						left:0px;
-
-						a.filler {
-							height:45px;
+						.roll-trigger {
 							width:360px;
-							text-decoration:none;
+							height: 45px;
+							position:relative;
+							top:0px;
+
+								a.close-button {
+									height:20px;
+									width:18px;
+									background: url('/images/close_button.png') top left no-repeat;
+									position:absolute;
+									top:8px;
+									right:0px;
+									display:none;
+								}
 						}
 
-						h2 {
-							font-family:arial, helvetica, san-serif;
-							font-size: 30px;
-							font-weight:bold;
-							color: #FFF;
+						div.back-anim {
+							width:0px;
+							display:none;
+							height:45px;
+							background-color:$blue;
+							position:absolute;
+							top:0px;
+							left:0px;
 						}
 
-						h3 {
-							font-family:arial, helvetica, san-serif;
-							font-size: 11px;
-							font-weight:bold;
-							color: $ltgrey;
+						div.info {
+							width:360px;
+							height:45px;
+							position:absolute;
+							top:0px;
+							left:0px;
+
+							a.filler {
+								height:45px;
+								width:360px;
+								text-decoration:none;
+							}
+
+							h2 {
+								font-family:arial, helvetica, san-serif;
+								font-size: 30px;
+								font-weight:bold;
+								color: #FFF;
+							}
+
+							h3 {
+								font-family:arial, helvetica, san-serif;
+								font-size: 11px;
+								font-weight:bold;
+								color: $ltgrey;
+							}
+
 						}
 
-					}
-
-					div.expanded {
-						height:720px;
-						width:360px;
-						background:#000;
-						position:relative;
-
-
-
-						div.image-holder {
+						div.expanded {
+							height:720px;
+							width:360px;
+							background:#000;
 							position:relative;
 
-							a.expand-image {
-								position:absolute;
-								height:31px;
-								width:31px;
-								background: url('/images/expand-image.jpg') top left no-repeat;
-								display:block;
-								right:0px;
-								bottom:0px;
-								display:none;
+
+
+							div.image-holder {
+								position:relative;
+
+								a.expand-image {
+									position:absolute;
+									height:31px;
+									width:31px;
+									background: url('/images/expand-image.jpg') top left no-repeat;
+									display:block;
+									right:0px;
+									bottom:0px;
+									display:none;
+
+								}
 
 							}
 
+							ul.info {
+								width:340px;
+								padding-left:10px;
+								padding-right:10px;
+								padding-top:20px;
+
+								li {
+									font-size:12px;
+									width: auto;
+									height: auto;
+									float:none;
+									margin-bottom:7px;
+									color:#FFF;
+
+									ul {
+										padding-left:20px;
+										padding-top:5px;
+									}
+
+									strong {
+										font-weight:bold;
+										color:$ltgrey;
+									}
+
+									h3 {
+										font-size:18px; 
+										font-weight:bold;
+										margin-bottom:10px;
+										color:$ltgrey;
+
+									}
+								}
+
+							}
 						}
 
-						ul.info {
-							width:340px;
-							padding-left:10px;
-							padding-right:10px;
-							padding-top:20px;
 
-							li {
-								font-size:12px;
-								width: auto;
-								height: auto;
-								float:none;
-								margin-bottom:7px;
-								color:#FFF;
 
-								ul {
-									padding-left:20px;
-									padding-top:5px;
-								}
+					}
+				}
 
-								strong {
-									font-weight:bold;
-									color:$ltgrey;
-								}
+				#docs {
+					width:460px;
 
-								h3 {
-									font-size:18px; 
-									font-weight:bold;
-									margin-bottom:10px;
-									color:$ltgrey;
+					h2 {
+						font-family:arial, helvetica, san-serif;
+						font-size: 30px;
+						font-weight:bold;
+						color: #FFF;
+						margin-bottom:10px;
+					}
 
-								}
-							}
+					p {
+						font-family:arial, helvetica, san-serif;
+						font-size: 14px;
+						line-height:19px;
+						color: $ltgrey;
+						margin-bottom:20px;
 
+						.code {
+							font-weight:bold;
+							color:#FFF;
 						}
 					}
 
-
-
 				}
+
 			}
 
 		}
