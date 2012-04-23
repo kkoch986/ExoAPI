@@ -112,26 +112,44 @@
 
 					<h2>Paging:</h2>
 
-<p>You may not always want all planets to be returned in your query. To limit the number of results returned by your queries, use limit=[start,count]. For example to return the first 10 planets ordered by name use:<br /><span class="code">/planets/all?sort=[name], limit=10</span></p>
+					<p>You may not always want all planets to be returned in your query. To limit the number of results returned by your queries, use limit=[start,count]. For example to return the first 10 planets ordered by name use:<br /><span class="code">/planets/all?sort=[name], limit=10</span></p>
 
-	<p>You can also apply an offset to begin from other points in the data, for example to access the 10 - 20 range, use the following query:<br /><span class="code">/planets/all?sort=[name], limit=10, start=10</span></p>
+						<p>You can also apply an offset to begin from other points in the data, for example to access the 10 - 20 range, use the following query:<br /><span class="code">/planets/all?sort=[name], limit=10, start=10</span></p>
 
-	<h2>Example Queries:</h2>
+						<h2>Example Queries:</h2>
 
-<p>To find the names of all planets with a mass less than 5, discovered this year (2012), sorted by mass ascending:<br /><span class="code">/planets/search?properties.mass:lt=5&discoveryyear=2012&sort=[properties.mass]&fields=[name]</code>
-</p>
+					<p>To find the names of all planets with a mass less than 5, discovered this year (2012), sorted by mass ascending:<br /><span class="code">/planets/search?properties.mass:lt=5&discoveryyear=2012&sort=[properties.mass]&fields=[name]</code>
+					</p>
 
-<h2>Response Format:</h2>
+					<h2>Response Format:</h2>
 
-<p>The API responses are JSON objects with the following format:</p>
+					<p>The API responses are JSON objects with the following format:</p>
 
-<pre>{ 
+					<pre>{ 
 	"response": 
 	{
 		"results": [ {field:value, field2:value2 … } ], 
 		"count": 100 
 	}
- }</pre>
+}</pre><br /><br />
+
+					 <h2>CORS and JSONP:</h2>
+
+					 <p>Although ExoAPI provides access through <a href="http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing">Cross-Origin Resource Sharing</a> we also allow support for <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> requests. We reccommend using CORS, which can be used with the following jQuery command:</p>
+
+					 	<pre>$.get("http://exoapi.com/api/planets/all", {}, function(data){ alert(data); });</pre><Br />
+
+					 <p>JSONP-Style callbacks can be specified using the jsonp=[callbackName] query parameter. For example: <span class="code">http://exoapi.com/api/planets/all?jsonp=callback</span>. This will return the following result format:</p>
+
+					 <pre>callback(
+{ 
+	"response": 
+	{
+		"results": [ {field:value, field2:value2 … } ], 
+		"count": 100 
+	}
+})</pre>
+
 
 					</div>
 				</div>
