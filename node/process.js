@@ -8,7 +8,7 @@ terminal.stdout.on('cd ../exo_data && git pull', function (data) {
 
 /* Connect to Mongo */
 var mongodb = require("mongodb"),
-	mongoserver = new mongodb.Server("174.122.110.37", 12002),
+	mongoserver = new mongodb.Server("localhost", 12002),
 	//mongoserver = new mongodb.Server("172.16.3.30", 27017),
 	db_connector = new mongodb.Db("test", mongoserver);
 
