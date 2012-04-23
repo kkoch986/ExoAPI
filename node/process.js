@@ -38,7 +38,7 @@ function startParsing(err, collection)
 	var files = fs.readdirSync("../exo_data/data/data");
 	//console.log(files);
 
-	console.log("[" + new Date() + "] Begin Update");
+	//console.log("[" + new Date() + "] Begin Update");
 	var x = 0;
 	for( ; x < files.length ; x++)
 	{
