@@ -121,16 +121,7 @@ end
 ## Sets the content type and uses json.pretty_generate to return a result.
 def return_response(response, jsonp)
 	content_type = "application/json"
-
-	if(!jsonp.nil?)
-		jsonp + "("
-	end
-
 	JSON.pretty_generate({"response" => {"results" => response, "count" => response.count}})
-
-	if(!jsonp.nil?)
-		")"	
-	end
 end
 
 ## turn a string in the form [a,b,c] into a ruby array
