@@ -24,7 +24,7 @@ get '/api/planets/search' do
 
 	search_p = {}
 	params.keys.each do |p|
-		if(p != "fields" && p != "sort" && p != "limit" && p != "start") 
+		if(p != "fields" && p != "sort" && p != "limit" && p != "start" && p != "jsonp") 
 			# look at the key and see if it contains a range symbol
 			if(p.split(":").count == 1)			
 					search_p[p] = Float(params[p]) rescue search_p[p] = params[p]
@@ -53,7 +53,7 @@ get '/api/planets/search' do
 		planets.skip(Integer(params[:start].to_i))
 	end
 
-	return_response(planets.to_a)
+	return_response(planets.to_a, params[:jsonp])
 end
 
 
@@ -81,7 +81,7 @@ get '/api/planets/:id' do
 		planets.skip(Integer(params[:start].to_i))
 	end
 	
-	return_response(planets.to_a)
+	return_response(planets.to_a, params[:jsonp])
 end
 
 
@@ -119,9 +119,18 @@ def get_find_opts(params)
 end
 
 ## Sets the content type and uses json.pretty_generate to return a result.
-def return_response(response)
+def return_response(response, jsonp)
 	content_type = "application/json"
+
+	if(!jsonp.nil?)
+		jsonp + "("
+	end
+
 	JSON.pretty_generate({"response" => {"results" => response, "count" => response.count}})
+
+	if(!jsonp.nil?)
+		")"	
+	end
 end
 
 ## turn a string in the form [a,b,c] into a ruby array
