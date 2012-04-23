@@ -4,7 +4,12 @@ require 'json/pure'
 require 'mongo'
 include Mongo
 
-db = Connection.new("localhost", "12002").db('test')
+#db = Connection.new("localhost", "12002").db('test')
+if(production?)
+	db = Connection.new("localhost", "12002").db('test')
+else
+	db = Connection.new("exoapi.com", "12002").db('test')
+end
 #db = Connection.new("172.16.3.30","27017").db('test')
 
 ###############################################################################################################
@@ -84,6 +89,16 @@ get '/api/planets/:id' do
 	return_response(planets.to_a, params[:jsonp])
 end
 
+get '/api/debug' do
+	if(development?)
+		"DEV"
+	elsif(test?)
+		"TEST"
+	elsif(production?)
+		"PRODUCTION"
+	end
+end
+
 
 ## returns the list of parameters to sort on
 def get_sort_opts(params)
@@ -120,8 +135,14 @@ end
 
 ## Sets the content type and uses json.pretty_generate to return a result.
 def return_response(response, jsonp)
-	content_type = "application/json"
-	JSON.pretty_generate({"response" => {"results" => response, "count" => response.count}})
+
+	if(jsonp.nil?)
+		content_type = "application/json"
+		JSON.pretty_generate({"response" => {"results" => response, "count" => response.count}})
+	else
+		content_type = "text/javascript"
+		jsonp + "(" + JSON.pretty_generate({"response" => {"results" => response, "count" => response.count}}) +  ")"
+	end
 end
 
 ## turn a string in the form [a,b,c] into a ruby array
