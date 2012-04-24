@@ -2,7 +2,12 @@ require 'rubygems'
 require 'sinatra'
 require 'json/pure'
 require 'mongo'
+require 'mixpanel'
 include Mongo
+
+before do
+  @mixpanel = Mixpanel::Tracker.new("444779380923a63b1846d1703993333d", request.env, true)
+end
 
 #db = Connection.new("localhost", "12002").db('test')
 if(production?)
@@ -58,6 +63,18 @@ get '/api/planets/search' do
 		planets.skip(Integer(params[:start].to_i))
 	end
 
+	@mixpanel.track_event("Planets", 
+	{
+		:mode => "search", 
+		:opts => opts, 
+		:sort => sort, 
+		:jsonp => params[:jsonp].nil?, 
+		:fields => params[:fields].nil? ? "all" : params[:fields].to_a.join(","),
+		:ref => request.referrer.nil? ? "none" : request.referrer, 
+		:limit => params[:limit].nil? ? false : params[:limit],
+		:start => params[:start].nil? ? false : params[:start]
+	}.merge(search_p))
+
 	return_response(planets.to_a, params[:jsonp])
 end
 
@@ -66,14 +83,39 @@ get '/api/planets/:id' do
 
 	response['Access-Control-Allow-Origin'] = '*'
 
+	@mixpanel.append_api("identify", request.ip)
+
 	collection = db.collection('planets')
 
 	opts = get_find_opts(params)
 	sort = get_sort_opts(params)
+	ref = request.referrer.nil? ? "/" : request.referrer
 
 	if(params[:id] == "all")
+		@mixpanel.track_event("Planets", 
+			{
+				:mode => "all", 
+				:opts => opts, 
+				:sort => sort, 
+				:jsonp => params[:jsonp].nil?, 
+				:ref => request.referrer.nil? ? "none" : request.referrer,
+				:fields => params[:fields].nil? ? "all" : params[:fields].to_a.join(","),
+				:limit => params[:limit].nil? ? false : params[:limit],
+				:start => params[:start].nil? ? false : params[:start]
+			})
 		planets = collection.find({}, opts).sort(sort)
 	else
+		@mixpanel.track_event("Planets", 
+			{
+				:mode => "by id", 
+				:opts => opts, 
+				:sort => sort, 
+				:jsonp => params[:jsonp].nil?, 
+				:ref => request.referrer.nil? ? "none" : request.referrer,
+				:limit => params[:limit].nil? ? false : params[:limit],
+				:fields => params[:fields].nil? ? "all" : params[:fields].to_a.join(","),
+				:start => params[:start].nil? ? false : params[:start]
+			})
 		planets = collection.find({:_id => params[:id].to_s}, opts).sort(sort)
 	end
 
@@ -90,15 +132,8 @@ get '/api/planets/:id' do
 end
 
 get '/api/debug' do
-	if(development?)
-		"DEV"
-	elsif(test?)
-		"TEST"
-	elsif(production?)
-		"PRODUCTION"
-	end
+	ref = request.referrer.nil? ? "/" : request.referrer
 end
-
 
 ## returns the list of parameters to sort on
 def get_sort_opts(params)
@@ -149,6 +184,7 @@ end
 def destringify_array(str)
 	return str.to_s.gsub("[","").gsub("]", "").split(",");
 end
+
 
 
 ###############################################################################################################
