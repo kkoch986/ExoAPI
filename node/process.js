@@ -8,7 +8,7 @@ terminal.stdout.on('cd ../exo_data && git pull', function (data) {
 
 /* Connect to Mongo */
 var mongodb = require("mongodb"),
-	mongoserver = new mongodb.Server("localhost", 12002),
+	mongoserver = new mongodb.Server("localhost", 27017),
 	//mongoserver = new mongodb.Server("172.16.3.30", 27017),
 	db_connector = new mongodb.Db("test", mongoserver);
 
@@ -24,7 +24,8 @@ setInterval(function(){
 
 function openCollection(err, db)
 {
-	console.log(err);
+	if(err != undefined)
+		console.log(err);
 	db.collection("planets", startParsing);
 }
 
@@ -50,6 +51,7 @@ function startParsing(err, collection)
 		delete object.id;
 		object._id = id;
 
+		//collection.update({_id:id}, object, {upsert: true, multi: false, safe: true}, function(err){ console.log(err); });
 		collection.save(object);
 	}
 	console.log("[" + new Date() + "] Complete Update ("+x+") Records Processed");
