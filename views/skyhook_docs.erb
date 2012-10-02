@@ -1,0 +1,165 @@
+<div id="docs">
+            <h2>ExoAPI: <br />SkyHook Documentation</h2><br />
+            <p>The new skyhook API (version 2 of the original API) can be reached using http://exoapi.com/api/skyhook/ The old API will remain accessible at the old url.</p>
+
+            <h2>Get Planets</h2>
+            <p>You can request all of the current ExoPlanetary data using /planets/all. These queries can also be modified by the sort and fields operators.</p>
+            <p>All Planets <span class="code">skyhook/planets/all</a></p>
+            <p>Planets By Id <span class="code">skyhook/planets/[id]</a></p>
+
+            <h2>Search Planets</h2>
+
+            <p>You can search planets using the fieldname=value parameters on /planets/search? These queries can also be modified using the sort and fields operators.</p>
+
+            <p>For instance to find all planets discovered in 2012:<br /><span class="code">skyhook/planets/search?discoveryyear=2012</span></p>
+
+            <p>You can also use :gt, :gte, :lt, :lte to execute range style queries. for example to find all planets discovered before 2007:<br /><span class="code">skyhook/planets/search?discoveryyear:lt=2007</span></p>
+
+            <h2>Sorting Results</h2>
+
+            <p>Results can be sorted using the sort parameter:<br /><span class="code">skyhook/planets/all?sort=[field[:asc|:desc]]</span></p>
+
+            <p>For example, to sort all planets by mass, descending:<br /><span class="code">skyhook/planets/all?sort=[properties.mass:desc]</span></p>
+
+            <p>If no directionality is specified, ascending is used for example you can sort the planets by mass asc simply by using:<br /><span class="code">skyhook/planets/all?sort=[properties.mass]</span></p>
+  
+
+            <p>You can also use multiple sorting parameters by using comma as a delimiter:<br /><span class="code">skyhook/planets/all?sort=[discoveryyear:desc,name]</p>
+
+            <p>Note: Not all planets have values for all fields. Currently in the API null values are returned as the greatest value. So a desc sort may return some results with null values for that field as the first several entries.</p>
+
+            <h2>Selecting Specific Fields</h2>
+
+            <p>If you do not want the full output with all planetary information, you can select specific fields that should be returned by the API, for example, to select only the names of planets use:<br /><span class="code">skyhook/planets/all?fields=[name]</span></p>
+
+            <p>Note: The _id field is returned in all queries, the above query would return {name, _id} fields for each entry in the API</p>
+
+            <p>Fields should be separated by a comma, to select name and mass from planets with mass > 5, ordered by mass use the following search query:<br /><span class="code">skyhook/planets/search?properties.mass:gte=5&amp;fields=[name,properties.mass]&sort=[properties.mass]</span><p/>
+
+            <h2>Current Field List:</h2>
+
+            <p>
+              This is the current list of fields in the database. Note this document may go out of date and more fields may be available (or unavailable if removed). For more information on the format of the underlying data, see here <span class="code">(https://github.com/hannorein/open_exoplanet_catalogue/tree/master/data).</span>
+            </p>
+            <table>
+                <tr><td>_id</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>name</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>name_kepler</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>name_koi</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>zone_class</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>mass_class</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>composition_class</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>atmosphere_class</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>hydrogen-rich</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>habitable_class</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>min_mass</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>mass</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>radius</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>density</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>gravity</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>esc_vel</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>sflux_min</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>sflux_mean</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>sflux_max</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>teq_min</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>teq_mean</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>teq_max</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>ts_min</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>ts_mean</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>ts_max</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>surf_press</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>appar_size</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>period</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>sem_major_axis</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>eccentricity</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>mean_distance</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>inclination</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>omega</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>hzd</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>hzc</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>hza</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>hzi</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>sph</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>surf_esi</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>esi</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>habitable</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>hab_moon</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>confirmed</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>disc_method</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>disc_year</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>image</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>imagedescription</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>multiplicity</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>disc_method</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td colspan="3"><strong>Star Properties<strong></td></tr>
+                <tr><td>star.name</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.name_hd</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.name_hip</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.constellation</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.type</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.mass</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.radius</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.teff</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.luminosity</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.metallicity</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.age</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.appar_mag</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.distance</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.ra</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.dec</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.mag_from_planet</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.no_planets</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.no_planets_hz</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.hab_zone_min</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.habcat</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.angulardistance</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.magV</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.magI</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.magH</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.magJ</td><td>An identifier for this planet</td><td></td></tr>
+                <tr><td>star.magK</td><td>An identifier for this planet</td><td></td></tr>
+            </table>
+          </p>
+
+          <h2>Paging:</h2>
+
+          <p>You may not always want all planets to be returned in your query. To limit the number of results returned by your queries, use limit=[start,count]. For example to return the first 10 planets ordered by name use:<br /><span class="code">skyhook/planets/all?sort=[name], limit=10</span></p>
+
+            <p>You can also apply an offset to begin from other points in the data, for example to access the 10 - 20 range, use the following query:<br /><span class="code">skyhook/planets/all?sort=[name], limit=10, start=10</span></p>
+
+            <h2>Example Queries:</h2>
+
+          <p>To find the names of all planets with a mass less than 5, discovered this year (2012), sorted by mass ascending:<br /><span class="code">skyhook/planets/search?properties.mass:lt=5&discoveryyear=2012&sort=[properties.mass]&fields=[name]</code>
+          </p>
+
+          <h2>Response Format:</h2>
+
+          <p>The API responses are JSON objects with the following format:</p>
+
+          <pre>{ 
+  "response": 
+  {
+    "results": [ {field:value, field2:value2 … } ], 
+    "count": 100 
+  }
+}</pre><br /><br />
+
+           <h2>CORS and JSONP:</h2>
+
+           <p>Although ExoAPI provides access through <a href="http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing">Cross-Origin Resource Sharing</a> we also allow support for <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> requests. We reccommend using CORS, which can be used with the following jQuery command:</p>
+
+            <pre>$.get("http://exoapi.com/api/planets/all", {}, function(data){ alert(data); });</pre><Br />
+
+           <p>JSONP-Style callbacks can be specified using the jsonp=[callbackName] query parameter. For example: <span class="code">http://exoapi.com/api/planets/all?jsonp=callback</span>. This will return the following result format:</p>
+
+           <pre>callback(
+{ 
+  "response": 
+  {
+    "results": [ {field:value, field2:value2 … } ], 
+    "count": 100 
+  }
+})</pre>
+
+
+          </div>
