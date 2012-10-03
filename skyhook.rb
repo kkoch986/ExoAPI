@@ -1,5 +1,5 @@
 if(production?)
-	skyhookdb = Connection.new("localhost", "12002").db('skyhook')
+	skyhookdb = Connection.new("ec2-107-20-91-214.compute-1.amazonaws.com", "27017").db('skyhook')
 else
 	skyhookdb = Connection.new("exoapi.com", "12002").db('skyhook')
 end
