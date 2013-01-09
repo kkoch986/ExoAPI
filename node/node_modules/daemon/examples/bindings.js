@@ -9,9 +9,10 @@ var util = require('util'),
     fs = require('fs'),
     http = require('http');
 
-var daemon;
+var binding;
 try {
-  daemon = require('../lib/daemon');
+  binding = require('../lib/daemon.' + process.version);
+  
 }
 catch (ex) {
   util.puts("Couldn't find 'daemon' add-on, did you install it yet?");
@@ -43,14 +44,8 @@ switch(args[2]) {
       res.end();
     }).listen(8000);
     
-    fs.open(config.logFile, 'w+', function (err, fd) {
-      if (err) {
-        return util.puts('Error starting daemon: ' + err);
-      }
-      
-      daemon.start(fd);
-      daemon.lock(config.lockFile);
-    });
+    binding.start(config.logFile);
+    binding.lock(config.lockFile);
     break;
     
   default:
