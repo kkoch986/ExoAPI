@@ -195,7 +195,7 @@
 $(document).ready(function() {
 
 	var image_base_dir = "https://raw.github.com/hannorein/open_exoplanet_catalogue/master/images/";
-	var image_type = ".iPhone.png";
+	var image_type = ".jpg";
 	// send a post request to the API to get the list of planets
   	$.ajax( 
   	{
@@ -231,7 +231,7 @@ $(document).ready(function() {
 						text += 
 								'<div class="image-holder" style="width:360px; height:100px; overflow:hidden;">' + 
 									'<img src="'+image_base_dir+d[x].image+image_type+'" style="width:360px;" />' + 
-									'<a href="'+image_base_dir+d[x].image +'.png'+'" class="expand-image" rel="prettyPhoto"></a>' +  
+									'<a href="'+image_base_dir+d[x].image +'.jpg'+'" class="expand-image" rel="prettyPhoto"></a>' +  
 								'</div>';
 					}
 
