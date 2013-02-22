@@ -79,3 +79,7 @@ end
 get '/api_demo' do 
 	erb :api_demo
 end
+
+get '/skyhook_demo' do 
+	erb :api_demo
+end

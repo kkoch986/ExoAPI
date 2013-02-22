@@ -103,7 +103,7 @@ function startParsing(err, collection)
 		// new ?
 		try
 		{
-			var text = fs.readFileSync("../exo_data/data/data/" + object._id + ".xml", "UTF-8");
+			var text = fs.readFileSync("../exo_data/data/systems/" + object._id + ".xml", "UTF-8");
 			var xml = libxmljs.parseXmlString(text);
 			
 			object.image = xml.get("//image").text();
