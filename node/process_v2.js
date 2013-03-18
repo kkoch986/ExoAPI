@@ -62,11 +62,13 @@ function startParsing(err, collection)
 	}
 
 	var count = 0;
+	var planets = [];
 	for(var x = 1; x < lines.length; x++)
 	{
 		var values = lines[x].split(",");
 		// construct an object out of each index in the fields array
 		if(values.length != fields.length) continue ;
+
 
 		var object = {"star":{}};
 		for(var y = 0; y < values.length; y++)
@@ -88,6 +90,7 @@ function startParsing(err, collection)
 		}
 
 		object._id = object.name;
+		planets.append(object.name);
 
 		// now bring in fields from the XML data
 		// star.angulardistance
@@ -112,7 +115,7 @@ function startParsing(err, collection)
 			object.star.angulardistance = xml.get("//star/angulardistance").text();
 
 			object.star.magV = xml.get("//star/magV").text();
-			object.star.magI = xml.get("//star/magI").text();
+			object.star.magI = xml.get("//star/magI").t ext();
 			object.star.magH = xml.get("//star/magJ").text();
 			object.star.magJ = xml.get("//star/magH").text();
 			object.star.magK = xml.get("//star/magK").text();
@@ -143,6 +146,7 @@ function startParsing(err, collection)
 
 		count ++;
 	}
+
 	console.log("Done, " + count + " records processed.");
 	db_connector.close();
 }

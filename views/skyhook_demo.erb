@@ -1,0 +1,146 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <title>ExoAPI SKyhook Demo</title>  
+  <meta name="description" content="The HTML5 Herald">  
+  <meta name="author" content="SitePoint">  
+  <link rel="stylesheet" href="/css/style.css">  
+
+</head>  
+<body> 
+
+<!--BEGIN MAIN BLOCK CONTENT -->
+<div id="main-content">
+	<!--BEGIN SUB NAV LINKS-->
+	<div id="sub-nav">
+		<ul class="subnav">
+			<li><a href="#" class="sub-link"><span data-title="INTERACT">INTERACT</span></a></li>
+			<li><a href="#" class="sub-link"><span data-title="DOCS">DOCS</span></a></li>
+			<li><a href="#" class="sub-link"><span data-title="DEMO">DEMO</span></a></li>		
+		</ul>
+	</div>
+	<!--END SUB NAV LINKS-->
+
+	<div class="api-form">
+		
+		<form>
+			<span>http://www.exoapi.com/api/skyhook/planets/</span>
+			<input id="url_spot" type="text" placeholder="all/"></input>
+		
+			<p>Filter:</p>
+			<ul id="api-tags">
+				<li class="deselected"><span>name</span></li>
+				<li class="deselected"><span>_id</span></li>
+				<li class="deselected"><span>discoverymethod</span></li>
+				<li class="deselected"><span>properties.mass</span></li>
+				<li class="deselected"><span>properties.radius</span></li>
+				<li class="deselected"><span>properties.orbit.period</span></li>
+				<li class="deselected"><span>properties.orbit.semimajoraxis</span></li>
+				<li class="deselected"><span>properties.orbit.eccentricity</span></li>
+				<li class="deselected"><span>properties.orbit.inclination</span></li>
+				<li class="deselected"><span>star.spectraltype</span></li>
+				<li class="deselected"><span>star.mass</span></li>
+				<li class="deselected"><span>star.radius</span></li>
+				<li class="deselected"><span>star.metallicity</span></li>
+				<li class="deselected"><span>star.rightascension</span></li>
+				<li class="deselected"><span>star.declination</span></li>
+				<li class="deselected"><span>star.angulardistance</span></li>
+				<li class="deselected"><span>star.distance</span></li>
+				<li class="deselected"><span>star.magV</span></li>
+				<li class="deselected"><span>star.magI</span></li>
+				<li class="deselected"><span>star.magH</span></li>
+				<li class="deselected"><span>star.magJ</span></li>
+				<li class="deselected"><span>star.magK</span></li>
+				<li class="deselected"><span>multiplicity</span></li>
+				<li class="deselected"><span>discoveryyear</span></li>
+				<li class="deselected"><span>lastupdate</span></li>
+				<li class="deselected"><span>description</span></li>
+				<li class="deselected"><span>new</span></li>
+				<li class="deselected"><span>image</span></li>
+				<li class="deselected"><span>imagedescription</span></li>
+			</ul>
+			<!-- END API TAGS -->
+
+			<p>Sort:</p>
+			<ul id="sort-opts">
+				<li class="sort-on">
+					<select class='sort-select'></select>
+
+					<input type="radio" name="sort1" value="asc" checked="checked">Ascending</input>
+					<input type="radio" name="sort1" id="sort1desc" value="desc">Descending</input>
+					
+					<input type="button" value="add" class="add-button"></input>
+				</li>
+			</ul>
+
+			<p>Search:</p>
+			<ul id="search-opts">
+				<li class="search-on">
+
+					<select class='sort-select'></select>
+
+					<!-- <input type="radio" name="search1" value="lt"> &lt;</input>
+					<input type="radio" name="search1" value="gt"> &gt;</input>
+					<input type="radio" name="search1" value="eq"> ==</input> -->
+					<select name="search_type">
+						<option value=":gte">&gt;=</option>
+						<option value=":gt">&gt;</option>
+						<option value="" selected="selected">==</option>
+						<option value=":lt">&lt;</option>
+						<option value=":lte">&lt;=</option>
+					</select>
+
+					<input type="text" placeholder="value"></input>
+
+					<input type="button" value="add" class="add-button"></input>
+				</li>
+			</ul>
+
+			
+			<div class="limit-opts">
+				<p>Limit:</p>
+				<span class="subtract">-</span>
+				<input type="text" class="to-increment" value="0" id="limit_input"></input>
+				<span class="add">+</span>
+			</div>
+
+			<div class="start-opts">
+				<p>Start:</p>
+				<span class="subtract">-</span>
+				<input type="text" class="to-increment" value="0" id="start_input"></input>
+				<span class="add">+</span>
+			</div>
+
+			<br />
+			<div id="control_buttons">
+				<button id="refresh">Refresh URL</button>
+				<button id="send">Try Query</button>
+			</div>
+			<br />
+
+			<div id="api-response">
+				<p>Response:</p>
+				<textarea readonly="readonly"></textarea>
+			</div>
+		</form>
+	</div>
+
+</div>	
+<a class="logo"></a>
+
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/app.js"></script>
+<script>
+$(document).ready(function() {
+	Exo.initGlobalApp();
+});
+
+</script>
+</body>  
+</html>  
+
+
+
+
+

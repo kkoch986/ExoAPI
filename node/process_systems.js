@@ -24,7 +24,7 @@ function pullUpdate()
 var mongodb = require("mongodb"),
 		mongoserver = new mongodb.Server("localhost", 12002),
 		//mongoserver = new mongodb.Server("172.16.3.30", 27017),
-		db_connector = new mongodb.Db("skyhook", mongoserver, {safe:false});
+		db_connector = new mongodb.Db("v3", mongoserver, {safe:false});
 
 function connectDB()
 {
