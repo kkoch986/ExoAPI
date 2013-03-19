@@ -47,8 +47,8 @@ function startParsing(err, collection)
 	var files = fs.readdirSync("../exo_data/data/systems");
 
 	console.log("[" + new Date() + "] Begin Update");
-	var x = 0;
-	for( ; x < files.length ; x++)
+	var count = 0;
+	for(var x = 0 ; x < files.length ; x++)
 	{
 		var text = fs.readFileSync("../exo_data/data/systems/" + files[x], "UTF-8");
 		var xml = libxmljs.parseXmlString(text);
@@ -58,8 +58,25 @@ function startParsing(err, collection)
 		delete object.id;
 		object._id = id;
 
+		count++;
 		collection.save(object);
 	}
+
+	var files = fs.readdirSync("../exo_data/data/systems_kepler");
+	for(var x = 0 ; x < files.length ; x++)
+	{
+		var text = fs.readFileSync("../exo_data/data/systems_kepler/" + files[x], "UTF-8");
+		var xml = libxmljs.parseXmlString(text);
+		
+		var id = xml.get("//name").text();
+		var object = parseElement(xml.root());
+		delete object.id;
+		object._id = id;
+
+		count++;
+		collection.save(object);
+	}
+
 	console.log("[" + new Date() + "] Complete Update ("+x+") Records Processed");
 	db_connector.close();
 }
@@ -79,21 +96,27 @@ function parseElement(element)
 			return node.text().toString();
 		}
 		else
-			subelement[node.name()] = parseElement(node);
+		{
+			// check that there isnt already something here
+			if(subelement[node.name()] != undefined)
+			{
+				// check if theres an array here already
+				if(subelement[node.name()] instanceof Array)
+					subelement[node.name()].push(parseElement(node))
+				else
+				{
+					var temp = subelement[node.name()];
+					subelement[node.name()] = [temp, parseElement(node)];
+				}
+			}
+			else
+				subelement[node.name()] = parseElement(node);
+		}
 	}
 	return subelement;
 }
 
 pullUpdate();
-
-
-
-
-
-
-
-
-
 
 function dump(obj) {
     var out = '';
