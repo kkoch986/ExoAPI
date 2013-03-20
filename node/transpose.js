@@ -68,3 +68,29 @@ db.systems.find( { "binary.star.planet": { $exists: true }  }, { "binary.star.pl
 // currently this doesnt happen, there are binary.binary.star but none have planets
 // db.systems.find( { "binary.binary.star.planet": { $exists: true }  }, { "binary.binary.star.planet":1, "_id":0 } ).forEach( function(x){ mapPlanetFunction(x.binary.binary.star.planet); } );
 
+// //// Compute the Average mass per planet on each planet list (note: doesnt return correctly for lists or kepler list planets)
+// var mapFunction = function() { 
+// 		if(this.mass != 0)
+// 	 		emit({list:this.list}, this.mass);
+// }
+
+// var reduceFunction = function(planetList, masses) {
+//   return Array.sum(masses) / masses.length;
+// };
+
+// db.planets.mapReduce( mapFunction, reduceFunction, {out: "average_mass_by_list"} );
+
+// //// Compute the number of planets discovered using each discovery method during each year
+// var mapFunction = function() {
+// 	emit({year: this.discoveryyear, method: this.discoverymethod}, 1);
+// }
+
+// var reduceFunction = function(year_and_method, planets) {
+//   return planets.length;
+// };
+
+// db.planets.mapReduce( mapFunction, reduceFunction, {out: "total_by_year_and_method"} );
+
+
+
+
