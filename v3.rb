@@ -50,10 +50,14 @@ def executeSearch(cname)
 				field = parts[0]
 				operator = parts[1]
 
-				begin
-					search_p[field] = {"$" + operator => Float(params[p])} 
-				rescue 
-					search_p[field] = {"$" + operator => params[p]}
+				if(operator == "exists")
+					search_p[field] = {"$exists" => 1} 
+				else
+					begin
+						search_p[field] = {"$" + operator => Float(params[p])} 
+					rescue 
+						search_p[field] = {"$" + operator => params[p]}
+					end
 				end
 			end
 		end
