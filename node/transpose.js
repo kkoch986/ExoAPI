@@ -161,3 +161,4 @@ db.systems.find( { "binary.binary.star": { $exists: true }  }, { "binary.binary.
 
 
 
+

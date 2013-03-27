@@ -3,9 +3,13 @@ var libxmljs = require("libxmljs");
 var sys = require('util')
 var exec = require('child_process').exec;
 var child;
+var UPDATE_FREQ = 360000;
+
+var startTime;
 
 function pullUpdate()
 {
+	startTime = (new Date()).valueOf();
 	console.log("Performing Pull Update...");
 	child = exec("cd ../exo_data && git pull; curl http://nanobio.hpcf.upr.edu/~amendez/phl/phl_hec_all_confirmed.csv -o ../exo_data/data.csv -#", function (error, stdout, stderr) {
 	  console.log('stdout: ' + stdout);
@@ -30,9 +34,7 @@ var _db;
 function connectDB()
 {
 	/* Connect to Mongo */
-	var UPDATE_FREQ = 360000;
 	db_connector.open(openCollection);
-	setTimeout(pullUpdate, UPDATE_FREQ);
 }
 
 function openCollection(err, db)
@@ -132,11 +134,26 @@ function startParsing(err, collection)
 		console.log("[" + new Date() + "] Complete Additional Planet Update ("+count+") Records Processed");
 		db_connector.close();
 
+		// Run the planet/system/star extractor
 		console.log("[" + new Date() + "] Running System/Planet Extractor.");
 		exec("mongo localhost:12002/v3 transpose.js", function (error, stdout, stderr) {
 			if (error !== null)
 				console.log('exec error: ' + error);
 			console.log("[" + new Date() + "] System/Planet Extractor Complete.");
+
+			// run the schema extractor
+			console.log("[" + new Date() + "] Running Data Schema Extractor.");
+			exec("mongo localhost:12002/v3 schema.js", function (error, stdout, stderr) {
+				if (error !== null)
+					console.log('exec error: ' + error);
+				console.log("[" + new Date() + "] Data Schema Extractor Complete.");
+
+				var endTime = (new Date()).valueOf();
+				console.log("[" + new Date() + "] Total Update Time: " + (endTime - startTime) + "ms (next round in " + UPDATE_FREQ + " ms)");
+
+				// set the time out for the next round of extraction
+				setTimeout(pullUpdate, UPDATE_FREQ);
+			});
 		});
 	});
 }

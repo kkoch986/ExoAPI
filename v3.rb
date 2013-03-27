@@ -18,6 +18,18 @@ get '/api/v3/planets/:id' do
 	executeIdQuery('planets')
 end
 
+get '/api/v3/stars/search' do
+	response['Access-Control-Allow-Origin'] = '*'
+	@mixpanel.append_api("identify", request.ip)
+	executeSearch('stars')
+end
+
+get '/api/v3/stars/:id' do
+	response['Access-Control-Allow-Origin'] = '*'
+	@mixpanel.append_api("identify", request.ip)
+	executeIdQuery('stars')
+end
+
 get '/api/v3/systems/search' do
 	response['Access-Control-Allow-Origin'] = '*'
 	@mixpanel.append_api("identify", request.ip)
