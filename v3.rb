@@ -6,6 +6,7 @@
 
 $v3db = Connection.new("localhost","12002").db('v3')
 
+## PLANETS API
 get '/api/v3/planets/search' do
 	response['Access-Control-Allow-Origin'] = '*'
 	@mixpanel.append_api("identify", request.ip)
@@ -18,6 +19,7 @@ get '/api/v3/planets/:id' do
 	executeIdQuery('planets')
 end
 
+## STARS API
 get '/api/v3/stars/search' do
 	response['Access-Control-Allow-Origin'] = '*'
 	@mixpanel.append_api("identify", request.ip)
@@ -30,6 +32,7 @@ get '/api/v3/stars/:id' do
 	executeIdQuery('stars')
 end
 
+## SYSTEMS API
 get '/api/v3/systems/search' do
 	response['Access-Control-Allow-Origin'] = '*'
 	@mixpanel.append_api("identify", request.ip)
@@ -42,6 +45,17 @@ get '/api/v3/systems/:id' do
 	executeIdQuery('systems')
 end
 
+## SCHEMA API
+get '/api/v3/schema/:id' do
+	response['Access-Control-Allow-Origin'] = '*'
+	@mixpanel.append_api("identify", request.ip)
+	
+	@mixpanel.track_event("schema."+params[:id], { :ref => request.referrer.nil? ? "none" : request.referrer })
+
+	collection = $v3db.collection("schema." + params[:id])
+	results = collection.find()
+	return_response(results.to_a, params[:jsonp])
+end
 
 def executeSearch(cname)
 	collection = $v3db.collection(cname)
