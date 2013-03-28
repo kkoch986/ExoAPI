@@ -3,7 +3,8 @@ var libxmljs = require("libxmljs");
 var sys = require('util')
 var exec = require('child_process').exec;
 var child;
-var UPDATE_FREQ = 360000;
+var UPDATE_FREQ = 3600000;
+var MONGO_SERVER_HOST = "localhost";
 
 var startTime;
 
@@ -26,7 +27,7 @@ function pullUpdate()
 }
 
 var mongodb = require("mongodb"),
-		mongoserver = new mongodb.Server("localhost", 12002),
+		mongoserver = new mongodb.Server(MONGO_SERVER_HOST, 12002),
 		//mongoserver = new mongodb.Server("172.16.3.30", 27017),
 		db_connector = new mongodb.Db("v3", mongoserver, {safe:false});
 
@@ -136,14 +137,14 @@ function startParsing(err, collection)
 
 		// Run the planet/system/star extractor
 		console.log("[" + new Date() + "] Running System/Planet Extractor.");
-		exec("mongo localhost:12002/v3 transpose.js", function (error, stdout, stderr) {
+		exec("mongo "+MONGO_SERVER_HOST+":12002/v3 transpose.js", function (error, stdout, stderr) {
 			if (error !== null)
 				console.log('exec error: ' + error);
 			console.log("[" + new Date() + "] System/Planet Extractor Complete.");
 
 			// run the schema extractor
 			console.log("[" + new Date() + "] Running Data Schema Extractor.");
-			exec("mongo localhost:12002/v3 schema.js", function (error, stdout, stderr) {
+			exec("mongo "+MONGO_SERVER_HOST+":12002/v3 schema.js", function (error, stdout, stderr) {
 				if (error !== null)
 					console.log('exec error: ' + error);
 				console.log("[" + new Date() + "] Data Schema Extractor Complete.");
