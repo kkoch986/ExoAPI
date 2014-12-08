@@ -89,7 +89,9 @@ get '/api/skyhook/planets/:id' do
 				:limit => params[:limit].nil? ? false : params[:limit],
 				:start => params[:start].nil? ? false : params[:start]
 			})
-		planets = collection.find({}, opts).sort(sort)
+		search_p = {}
+		search_p["name"] = { "$exists" => true }
+		planets = collection.find(search_p, opts).sort(sort)
 	else
 		@mixpanel.track_event("Planets", 
 			{
