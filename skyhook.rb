@@ -17,7 +17,7 @@ get '/api/skyhook/planets/search' do
 	sort = get_sort_opts(params)
 
 	search_p = {  }
-	search_p["name"] = { "#exists" => true }
+	search_p["name"] = { "$exists" => true }
 	params.keys.each do |p|
 		if(p != "fields" && p != "sort" && p != "limit" && p != "start" && p != "jsonp") 
 			# look at the key and see if it contains a range symbol
